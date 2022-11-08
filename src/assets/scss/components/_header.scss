@@ -1,0 +1,21 @@
+header {
+    position: relative;
+    z-index: 1060;
+}
+
+#mdMenu {
+    .modal-dialog {
+        max-width: 100%;
+    }
+
+    .modal-content {
+        border-radius: 0;
+        margin: 0;
+        border: none;
+        min-height: 100vh;
+        background-color: $oscuro;
+        // display: grid;
+        // grid-template-columns: 1fr;
+        // grid-template-rows: auto 1fr auto;
+    }
+}

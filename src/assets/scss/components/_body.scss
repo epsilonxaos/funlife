@@ -1,0 +1,35 @@
+body {
+    // font-family: 'Montserrat', sans-serif;
+    background-color: $oscuro;
+    color: white;
+    
+    #root {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    a,
+    a:hover,
+    a:active,
+    a:focus {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .bg {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: auto;
+
+        img {
+            opacity: 0;
+        }
+    }
+
+    .text-dorado {
+        color: $dorado;
+    }
+}
