@@ -9,13 +9,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@sigodenjs/fake": "^0.2.0",
+    "@splidejs/react-splide": "^0.7.12",
     "bootstrap": "^4.6.2",
     "font-awesome": "^4.7.0",
+    "macy": "^2.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^5.3.4",
     "react-router-dom": "^5.3.4",
-    "sass": "^1.56.0"
+    "sass": "^1.56.0",
+    "swiper": "^8.4.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
