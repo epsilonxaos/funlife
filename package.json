@@ -13,6 +13,7 @@
     "@splidejs/react-splide": "^0.7.12",
     "bootstrap": "^4.6.2",
     "font-awesome": "^4.7.0",
+    "jquery": "^3.6.1",
     "macy": "^2.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

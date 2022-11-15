@@ -1,12 +1,30 @@
 import SocialMedia from './socialMedia';
 
+import logo from '../assets/img/logo/FunLIFE-01.svg';
+
+
 const footer = () => {
+
+    const iframeInstagram = `<iframe src="https://snapwidget.com/embed/1016316" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:765px; height:510px"></iframe>`;
     return(
         <footer className="py-3">
-            <div className="container">
+            <div className="container-fluid mw16">
                 <div className="row mb-3 text-center justify-content-center">
                     <div className="col-12">
-                        <img src="" alt="FUNLIFE INTERNATIONAL" className="mb-4" />
+                        <div style={{
+                            backgroundImage: `url(${logo})`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundSize: '160%',
+                            backgroundPosition: 'center',
+                            width: '240px',
+                            height: '110px',
+                        }}
+                        className="mx-auto mb-3"
+                        >
+                            {/* <img src="" alt="FUNLIFE INTERNATIONAL" className="mb-4" /> */}
+                        </div>
+
+                        <div className="App" dangerouslySetInnerHTML={{__html: iframeInstagram}}></div>
                     </div>
                     <div className="col-12 col-md-8">
                         <p className="mb-0">Ipsum ullamco mollit cillum eu aliquip laborum do sit duis nulla labore. 

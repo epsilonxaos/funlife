@@ -8,6 +8,10 @@ import Header from './components/header';
 import Footer from './components/footer';
 
 import Home from './pages/Home';
+import Gallery from './pages/Gallery';
+import Services from './pages/Services';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
 	return (
@@ -18,6 +22,18 @@ function App() {
 				<Switch>
 					<Route exact path="/">
 						<Home />
+					</Route>
+					<Route path="/gallery">
+						<Gallery />
+					</Route>
+					<Route path="/services">
+						<Services />
+					</Route>
+					<Route path="/about">
+						<About />
+					</Route>
+					<Route path="/contact">
+						<Contact />
 					</Route>
 				</Switch>
 			</main>
