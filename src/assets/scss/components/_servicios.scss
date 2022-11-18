@@ -1,35 +1,30 @@
-.servicios {
-
-    h1 {
-        position: relative;
-        z-index: 10;
-        left: 3vw;
+.services {
+    img {
+        height: 600px;
+        width: 100%;
+        object-fit: cover;
     }
 
-    .mneg {
-        margin-top: -10vh;
+    .bg {
+        &.parallax {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            img {
+                opacity: 0;
+            }
+        }
     }
 
-    .swiper {
-        img {
-            height: 600px;
-            width: 100%;
-            object-fit: cover;
-        }
+    .titlee {
+        font-size: 1.528vw;
+        line-height: 2.083vw;
+        font-weight: 600;
+        color: $dorado;
+    }
 
-        .titlee {
-            font-size: 1.528vw;
-            line-height: 2.083vw;
-            font-weight: 600;
-            color: $dorado;
-        }
-
-        p {
-            font-size: 16px;
-        }
-
-        .swiper-slide {
-            background-color: $oscuro;
-        }
+    p {
+        font-size: 16px;
     }
 }

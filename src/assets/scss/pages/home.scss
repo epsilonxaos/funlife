@@ -4,7 +4,35 @@
 @import '../components/servicios';
 @import '../components/galeria';
 
-.quienesSomos {
-    position: relative;
-    margin-top: -22.224vh;
+@import "../mixins/seccionPaddings";
+
+
+.home {
+    @import '../components/byn';
+    
+    .quienesSomos {
+        position: relative;
+        margin-top: -22.224vh;
+    
+        .title {
+            font-size: 30px;
+            
+            @media screen and (min-width: 536px) {
+                font-size: 60px;
+            }
+            @media screen and (min-width: 768px) {
+                font-size: 5.569vw;
+                line-height: 5.569vw;
+            }
+            @media screen and (min-width: 1366px) {
+                font-size: 5.569vw;
+                line-height: 5.569vw;
+            }
+        }
+    }
+
+    .services,
+    .galeria {
+        @include padding-for-sections(60px, 20px);
+    }
 }

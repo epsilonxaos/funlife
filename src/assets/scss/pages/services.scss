@@ -1,33 +1,10 @@
 @import '../variables';
+@import '../components/servicios';
+
+@import "../mixins/seccionPaddings";
 
 .services {
-    img {
-        height: 600px;
-        width: 100%;
-        object-fit: cover;
-    }
-
-    .bg {
-        &.parallax {
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-
-            img {
-                opacity: 0;
-            }
-        }
-    }
-
-    .titlee {
-        font-size: 1.528vw;
-        line-height: 2.083vw;
-        font-weight: 600;
-        color: $dorado;
-    }
-
-    p {
-        font-size: 16px;
-    }
+    @import '../components/byn';
+    
+    @include padding-for-sections(180px, 20px);
 }

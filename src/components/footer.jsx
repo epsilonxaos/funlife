@@ -7,8 +7,8 @@ const footer = () => {
 
     const iframeInstagram = `<iframe src="https://snapwidget.com/embed/1016316" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:765px; height:510px"></iframe>`;
     return(
-        <footer className="py-3">
-            <div className="container-fluid mw16">
+        <footer className="pt-5 pb-3">
+            <div className="container">
                 <div className="row mb-3 text-center justify-content-center">
                     <div className="col-12">
                         <div style={{

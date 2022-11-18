@@ -1,18 +1,17 @@
 
 import '../assets/scss/pages/gallery.scss';
-import Galeria from '../components/galeria';
+import TitulosSeccion from '../components/titulos';
+import MacyGallery from '../components/macyGallery';
 
 const Gallery = () => {
     return(
-        <div className="py-5">
-            <div className="container-fluid mw16">
+        <div className="galeria">
+            <div className="container text-center">
+                <TitulosSeccion title={"Gallery"} />
 
-
-            <div className="text-center">
-                <Galeria />
-            </div>
-
-                
+                <div className="py-5">
+                    <MacyGallery />
+                </div>
             </div>
         </div>
     )

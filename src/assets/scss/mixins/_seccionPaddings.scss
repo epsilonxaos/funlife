@@ -1,0 +1,9 @@
+@mixin padding-for-sections($pt: 60px, $pb: 60px) {
+    padding-top: $pt;
+    padding-bottom: $pb;
+
+    @media screen and (min-width: 992px) {
+        padding-top: ($pt + 40px);
+        padding-bottom: ($pb + 40px);
+    }
+}

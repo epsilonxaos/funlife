@@ -1,2 +1,10 @@
 @import '../variables';
 @import '../components/galeria';
+
+@import "../mixins/seccionPaddings";
+
+.galeria {
+    @import '../components/byn';
+    
+    @include padding-for-sections(180px, 20px);
+}

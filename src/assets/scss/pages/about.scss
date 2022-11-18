@@ -1,0 +1,15 @@
+@import '../variables';
+
+@import "../mixins/seccionPaddings";
+
+.about {
+    @import '../components/byn';
+    
+    .aboutus {
+        @include padding-for-sections(180px, 20px);
+    }
+
+    .portafolio {
+        @include padding-for-sections(60px, 20px);
+    }
+}
