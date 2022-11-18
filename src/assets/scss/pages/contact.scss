@@ -1,0 +1,7 @@
+@import '../variables';
+
+@import "../mixins/seccionPaddings";
+
+.contacto {    
+    @include padding-for-sections(180px, 20px);
+}

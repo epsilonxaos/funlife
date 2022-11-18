@@ -6,6 +6,7 @@ import {
 
 import Header from './components/header';
 import Footer from './components/footer';
+import ScrollHandler from './components/scrollHandler';
 
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
@@ -16,6 +17,7 @@ import Contact from './pages/Contact';
 function App() {
 	return (
 		<Router>
+			<ScrollHandler />
 			<Header />
 
 			<main>
