@@ -6,11 +6,16 @@ import QuienesSomos from '../components/quienesSomos';
 import Servicios from '../components/servicios';
 import Galeria from '../components/galeria';
 
+import { motion } from "framer-motion"
+
 import TitulosSeccion from '../components/titulos';
 
 const Home = () => {
     return(
-        <div className="home">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }} className="home">
             <VideoPortada />
             <QuienesSomos />
 
@@ -27,7 +32,7 @@ const Home = () => {
                 </div>
             </div>
             <Galeria />
-        </div>
+        </motion.div>
     )
 }
 

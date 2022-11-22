@@ -1,11 +1,17 @@
 import MacyGallery from '../components/macyGallery';
 import TitulosSeccion from '../components/titulos';
 
+import { motion } from "framer-motion"
+
 import '../assets/scss/pages/about.scss';
 
 const About = () => {
     return(
-        <div className="about">
+        <motion.div 
+        
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }} className="about">
             <div className="container">
                 <div className="aboutus">
                     <div className="text-center">
@@ -40,7 +46,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

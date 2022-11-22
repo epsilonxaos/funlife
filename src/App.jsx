@@ -1,8 +1,11 @@
 import {
-	BrowserRouter as Router,
 	Switch,
-	Route
+	Route,
+	useLocation,
+	useHistory
 } from 'react-router-dom';
+
+import { AnimatePresence } from 'framer-motion';
 
 import Header from './components/header';
 import Footer from './components/footer';
@@ -15,33 +18,35 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 
 function App() {
+	const location = useLocation();
+
 	return (
-		<Router>
+		<AnimatePresence>
 			<ScrollHandler />
 			<Header />
 
 			<main>
-				<Switch>
-					<Route exact path="/">
+				<Switch location={location} key={location.pathname}>
+					<Route exact path="/" key={'home'}>
 						<Home />
 					</Route>
-					<Route path="/gallery">
+					<Route path="/gallery" key={'galeria'}>
 						<Gallery />
 					</Route>
-					<Route path="/services">
+					<Route path="/services" key={'servicios'}>
 						<Services />
 					</Route>
-					<Route path="/about">
+					<Route path="/about" key={'nosotros'}>
 						<About />
 					</Route>
-					<Route path="/contact">
+					<Route path="/contact" key={'contacto'}>
 						<Contact />
 					</Route>
 				</Switch>
 			</main>
 
 			<Footer />
-		</Router>
+		</AnimatePresence>
 	)
 }
 

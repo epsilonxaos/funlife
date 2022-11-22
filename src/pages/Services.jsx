@@ -3,10 +3,14 @@ import '../assets/scss/pages/services.scss';
 import Servicios from '../components/servicios';
 
 import TitulosSeccion from '../components/titulos';
+import { motion } from "framer-motion"
 
 const Services = () => {
     return(
-        <div className="services">
+        <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }} className="services">
             <div className="container">
 
 
@@ -17,7 +21,7 @@ const Services = () => {
                 <Servicios />
                 
             </div>
-        </div>
+        </motion.div>
     )
 }
 

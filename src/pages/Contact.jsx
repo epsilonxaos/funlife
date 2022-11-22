@@ -1,10 +1,14 @@
 import '../assets/scss/pages/contact.scss';
 
 import TitulosSeccion from '../components/titulos';
+import { motion } from "framer-motion"
 
 const Contact = () => {
     return (
-        <div className="contacto">
+        <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }} className="contacto">
             <div className="container">
 
                 <div className="text-center">
@@ -15,7 +19,7 @@ const Contact = () => {
                     <p>En desarrollo ...</p>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
