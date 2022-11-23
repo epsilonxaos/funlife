@@ -22,8 +22,8 @@ function App() {
 
 	return (
 		<AnimatePresence>
-			<ScrollHandler />
-			<Header />
+			<ScrollHandler key={'scrolls'} />
+			<Header key={'header'} />
 
 			<main>
 				<Switch location={location} key={location.pathname}>
@@ -45,7 +45,7 @@ function App() {
 				</Switch>
 			</main>
 
-			<Footer />
+			<Footer key={'fooetr'}/>
 		</AnimatePresence>
 	)
 }

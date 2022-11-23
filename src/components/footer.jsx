@@ -1,32 +1,25 @@
 import SocialMedia from './socialMedia';
 
 import logo from '../assets/img/logo/FunLIFE-01.svg';
-
+import estrellas from '../assets/img/estrellas-bln.png';
+import TitulosSeccion from './titulos';
 
 const footer = () => {
 
-    const iframeInstagram = `<iframe src="https://snapwidget.com/embed/1016316" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:765px; height:510px"></iframe>`;
+    const iframeInstagram = `<iframe src="https://snapwidget.com/embed/1016316" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width: 100%; height:510px"></iframe>`;
     return(
         <footer className="pt-5 pb-3">
             <div className="container">
                 <div className="row mb-3 text-center justify-content-center">
                     <div className="col-12">
-                        <div style={{
-                            backgroundImage: `url(${logo})`,
-                            backgroundRepeat: 'no-repeat',
-                            backgroundSize: '160%',
-                            backgroundPosition: 'center',
-                            width: '240px',
-                            height: '110px',
-                        }}
-                        className="mx-auto mb-3"
-                        >
-                            {/* <img src="" alt="FUNLIFE INTERNATIONAL" className="mb-4" /> */}
-                        </div>
 
+                        <div className="d-flex align-items-center justify-content-center text-uppercase mb-4">
+                            <img src={estrellas} alt="Estrellas instagram" className="mr-3" />
+                            <span><TitulosSeccion styleClass={'titulo-small'} title={'@funlife.travelandevents'} /></span>
+                        </div>
                         <div className="App" dangerouslySetInnerHTML={{__html: iframeInstagram}}></div>
                     </div>
-                    <div className="col-12 col-md-8">
+                    <div className="col-12 col-md-8 pt-4">
                         <p className="mb-0">Ipsum ullamco mollit cillum eu aliquip laborum do sit duis nulla labore. 
                             Anim minim nisi aliqua quis.</p>
                         <p className="mb-4">Consequat nostrud fugiat qui quis esse ea 

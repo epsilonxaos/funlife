@@ -5,6 +5,8 @@ import { motion } from "framer-motion"
 
 import '../assets/scss/pages/about.scss';
 
+import person from '../assets/img/person.jpg';
+
 const About = () => {
     return(
         <motion.div 
@@ -19,7 +21,7 @@ const About = () => {
                     </div>
 
 
-                    <div className="row justify-content-center pt-5 mb-5">
+                    <div className="row justify-content-center pt-5 mb-5 pb-5">
                         <div className="col-12 mb-4">
                             <p>FunLIFE specializes in organizing and planning conventions and group events for luxury and premium brands. For over 15 years, the agency has provided a first-class full-service that takes care of all the group travel, accommodations, and event management and production needs from beginning -to-end.</p>
                         </div>
@@ -32,6 +34,27 @@ const About = () => {
                             <h6 className="font-weight-bold text-dorado">CORPORATE EVENTS AND CONVENTIONS</h6>
                             <p>Our  event planning and production support is full-service.  just tell us what, where, when, and for how many and we will make it happen!</p>
                             <p>FunLIFE finds and secures venue spaces such as: 5-star hotels and resorts, private homes and gardens, halls, museums, restaurants, bars, mansions, haciendas, castles, beach parks, etc... specialize in creating the perfect atmosphere by planning and managing all audiovisual, lighting, furniture, fixtures and floral arrangements and equipment.</p>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-12 col-sm-6 col-md-4 mb-3">
+                            <div className="equipo text-center">
+                                <div className="bg mb-4 not-hover" style={{backgroundImage: `url(${person})`}}></div>
+                                <p>Ronal Hernandez</p>
+                            </div>
+                        </div>
+                        <div className="col-12 col-sm-6 col-md-4 mb-3">
+                            <div className="equipo text-center">
+                                <div className="bg mb-4 not-hover" style={{backgroundImage: `url(${person})`}}></div>
+                                <p>Ronal Hernandez</p>
+                            </div>
+                        </div>
+                        <div className="col-12 col-sm-6 col-md-4 mb-3">
+                            <div className="equipo text-center">
+                                <div className="bg mb-4 not-hover" style={{backgroundImage: `url(${person})`}}></div>
+                                <p>Ronal Hernandez</p>
+                            </div>
                         </div>
                     </div>
                 </div>

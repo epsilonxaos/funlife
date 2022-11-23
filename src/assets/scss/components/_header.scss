@@ -1,11 +1,21 @@
+
+// HEADER
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1060;
+    transition: all .3s ease;
+    padding: 15px 0;
+
+    &.active {
+        background-color: rgba($color: #1a1a1a, $alpha: 0.7);
+        padding: 6px 0px;
+    }
 }
 
+// MODAL MENU
 #mdMenu {
     .modal-dialog {
         max-width: 100%;
@@ -20,5 +30,18 @@ header {
         // display: grid;
         // grid-template-columns: 1fr;
         // grid-template-rows: auto 1fr auto;
+    }
+
+    .menu-lista {
+        height: calc(100vh - 7rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        font-size: 4vw;
+        font-weight: 500;
+
+        .active {
+            color: $dorado;
+        } 
     }
 }
