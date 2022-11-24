@@ -12,6 +12,23 @@ header {
     &.active {
         background-color: rgba($color: #1a1a1a, $alpha: 0.7);
         padding: 6px 0px;
+
+        &.transparent {
+            background-color: transparent;
+        }
+    }
+
+    .logo {
+        background-repeat: no-repeat;
+        background-size: 160%;
+        background-position: center;
+        width: 180px;
+        height: 45px;
+
+        @media screen and (min-width: 600px) {
+            width: 240px;
+            height: 60px;
+        }
     }
 }
 
@@ -19,6 +36,11 @@ header {
 #mdMenu {
     .modal-dialog {
         max-width: 100%;
+    }
+
+    .modal-body {
+        height: 100vh;
+        overflow: hidden;
     }
 
     .modal-content {
@@ -37,8 +59,16 @@ header {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        font-size: 4vw;
+        font-size: 7vw;
         font-weight: 500;
+
+        @media screen and (min-width: 600px) {
+            font-size: 4vw;
+        }
+
+        @media (orientation: landscape) {
+            font-size: 4vh;
+        }
 
         .active {
             color: $dorado;

@@ -2,6 +2,11 @@
     padding-top: $pt;
     padding-bottom: $pb;
 
+    @media screen and (max-width: 767px) {
+        padding-top: $pt - 40px;
+        padding-bottom: $pb - 40px;
+    }
+
     @media screen and (min-width: 992px) {
         padding-top: ($pt + 40px);
         padding-bottom: ($pb + 40px);

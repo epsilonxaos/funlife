@@ -8,6 +8,13 @@
     .aboutus {
         @include padding-for-sections(180px, 20px);
 
+        .title {
+            font-size: 45px
+        }
+        .title .extraTitle {
+            top: -12px
+        }
+
         .equipo {
             .bg {
                 width: 100%;

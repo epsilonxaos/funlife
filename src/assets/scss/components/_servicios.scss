@@ -1,8 +1,13 @@
 .services {
     img {
-        height: 600px;
+        min-height: 450px;
+        height: 75vh;
         width: 100%;
         object-fit: cover;
+
+        @media screen and (min-width: 786px) {
+            height: 600px;
+        }
     }
 
     .bg {
@@ -18,10 +23,14 @@
     }
 
     .titlee {
-        font-size: 1.528vw;
-        line-height: 2.083vw;
+        font-size: 24px;
         font-weight: 600;
         color: $dorado;
+        
+        @media screen and (min-width: 1200px) {
+            font-size: 1.528vw;
+            line-height: 2.083vw;
+        }
     }
 
     p {

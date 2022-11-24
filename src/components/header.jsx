@@ -13,6 +13,7 @@ const header = () => {
 
     function handlerClickMenu() {
         setOpenMenu(!openMenu);
+        $('#root').toggleClass('overflow-hidden');
     }
 
     function handlerCloseMenu() {
@@ -35,7 +36,7 @@ const header = () => {
 
     return (
         <>
-            <header className={`${navbar ? 'active' : ''}`}>
+            <header className={`${navbar ? 'active' : ''} ${openMenu ? 'transparent' : ''}`}>
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-6 col-md-4 d-none d-md-block">
@@ -43,20 +44,11 @@ const header = () => {
                         </div>
                         <div className="col-6 col-md-4 text-md-center">
                             <ul className="list-unstyled mb-0 p-0">
-                                <li><Link to="/">
-                                    <div style={{
-                                        backgroundImage: `url(${logo})`,
-                                        backgroundRepeat: 'no-repeat',
-                                        backgroundSize: '160%',
-                                        backgroundPosition: 'center',
-                                        width: '240px',
-                                        height: '60px',
-                                    }}
-                                    className="mx-auto"
-                                    >
-                                        {/* <img src={logo} alt="FunLife" style={{backgroundImage: `url(${logo})`}} />     */}
-                                    </div>
-                                </Link></li>
+                                <li>
+                                    <Link to="/">
+                                        <div style={{ backgroundImage: `url(${logo})`, }} className="mx-auto logo" ></div>
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                         <div className="col-6 col-md-4 text-right">

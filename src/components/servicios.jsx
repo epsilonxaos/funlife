@@ -6,12 +6,12 @@ const Servicios = () => {
         <>
             {/* Eventos */}
             <div className="row py-5 align-items-center mb-5">
-                <div className="col-12 col-md-6">
+                <div className="col-12 col-lg-6">
                     <div className="bg parallax mb-5 not-hover" style={{backgroundImage: `url(${imgService1})`}}>
                         <img src={imgService1} alt="Conventions and Events" className="opacity" />
                     </div>
                 </div>
-                <div className="col-12 col-md-6 pl-xl-5">
+                <div className="col-12 col-lg-6 pl-xl-5">
                     <h2 className="titlee mb-4 mt-4 text-center">Conventions and Events</h2>
 
                     <p className="mb-0">FunLIFE agents will work tirelessly to find and secure the perfect venue and space for your event such as:</p>
@@ -38,12 +38,12 @@ const Servicios = () => {
 
             {/* Travel */}
             <div className="row py-5 align-items-center">
-                <div className="col-12 col-md-6 order-md-2">
+                <div className="col-12 col-lg-6 order-lg-2">
                     <div className="bg parallax mb-5 not-hover" style={{backgroundImage: `url(${imgService2})`}}>
                         <img src={imgService2} alt="Travel Services" className="opacity" />
                     </div>
                 </div>
-                <div className="col-12 col-md-6 order-md-1 pr-xl-5">
+                <div className="col-12 col-lg-6 order-lg-1 pr-xl-5">
                     <h2 className="titlee mb-4 mt-4 text-center">Travel Services</h2>
                     <p>We take care of ticket purchase, reservation confirmation, seat assignments, and payment for service for almost any size group.</p>
                     <p>We strive to be with our passengers every step of the way, from the moment they step out of home until they step back in.</p>

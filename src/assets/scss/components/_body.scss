@@ -44,7 +44,7 @@ body {
         position: relative;
         margin-top: -2.083vw;
         transform: translate3d(0,0,0);
-        font-size: 70px;
+        font-size: 40px;
         
         @media screen and (min-width: 536px) {
             font-size: 90px;
@@ -56,6 +56,10 @@ body {
         @media screen and (min-width: 1366px) {
             font-size: 7.569vw;
             line-height: 7.569vw;
+        }
+
+        @media (orientation: landscape) {
+            font-size: 65px;
         }
 
         .extraTitle {

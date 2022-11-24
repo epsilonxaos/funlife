@@ -2,11 +2,13 @@ img, .bg {
     filter: grayscale(1);
     transition: all ease .8s;
 
-    &:not(.not-hover) {
-        cursor: pointer;
-        
-        &:hover {
-            filter: grayscale(0);
+    @media (pointer: fine) {
+        &:not(.not-hover) {
+            cursor: pointer;
+            
+            &:hover {
+                filter: grayscale(0);
+            }
         }
     }
 }
