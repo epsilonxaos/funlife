@@ -4,7 +4,7 @@ import logo from '../assets/img/logo/FunLIFE-01.svg';
 import estrellas from '../assets/img/estrellas-bln.png';
 import TitulosSeccion from './titulos';
 
-const footer = () => {
+const footer = ({sociales, correo, telefonos}) => {
 
     const iframeInstagram = `<iframe src="https://snapwidget.com/embed/1016316" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width: 100%; height:510px"></iframe>`;
     return(
@@ -19,21 +19,17 @@ const footer = () => {
                         </div>
                         <div className="App" dangerouslySetInnerHTML={{__html: iframeInstagram}}></div>
                     </div>
-                    <div className="col-12 col-md-10 col-lg-8 pt-4">
-                        <p className="mb-0">Ipsum ullamco mollit cillum eu aliquip laborum do sit duis nulla labore. 
-                            Anim minim nisi aliqua quis.</p>
-                        <p className="mb-4">Consequat nostrud fugiat qui quis esse ea 
-                            veniam magna.</p>
-                        <p>Reprehenderit ipsum deserunt est dolore.</p>
+                    <div className="col-12 col-md-10 col-lg-8 pt-5">
+                        <p className="mb-4">Connect with us today for a free consultancy. We have offices in Mexico and U.S.A - and we are fluent in English and Spanish.</p>
                     </div>
                 </div>
 
                 <div className="row align-items-center ">
                     <div className="col-6 order-1">
-                        <a href="mailto:info@funlifeinternational.com">info@funlifeinternational.com</a>
+                        <a href={`mailto:${correo}`}>{correo}</a>
                     </div>
                     <div className="col-6 order-2 text-right">
-                        <SocialMedia />
+                        <SocialMedia {...sociales} />
                     </div>
 
                     <div className="col-12 order-3"><hr /></div>
@@ -43,8 +39,8 @@ const footer = () => {
                     </div>
                     <div className="col-12 col-md-7 col-lg-6 order-4 order-md-5 text-center text-md-right">
                         <p className="font-weight-bold small">
-                            <a href="tel:+525552118874" className="mr-3"><i className="fa fa-phone mr-1" aria-hidden="true"></i>Mexico <span className="text-dorado">55 52 11 88 74</span></a>
-                            <a href="tel:+18024884166"><i className="fa fa-phone mr-1" aria-hidden="true"></i>U.S.A <span className="text-dorado">802 488 41 66</span></a>
+                            <a href={`tel:+52${telefonos.mx}`} className="mr-3"><i className="fa fa-phone mr-1" aria-hidden="true"></i>Mexico <span className="text-dorado">{telefonos.mx}</span></a>
+                            <a href={`tel:+1${telefonos.usa}`}><i className="fa fa-phone mr-1" aria-hidden="true"></i>U.S.A <span className="text-dorado">{telefonos.usa}</span></a>
                         </p>
                     </div>
                 </div>

@@ -7,7 +7,7 @@ import logo from '../assets/img/logo-header.svg';
 // import logo from '../assets/img/logo/FunLIFE-04.svg';
 import btn from '../assets/img/estrellas-bln.png';
 
-const header = () => {
+const header = ({sociales}) => {
     const [openMenu, setOpenMenu] = useState(false);
     const [navbar, setNavbar] = useState(false)
 
@@ -40,7 +40,7 @@ const header = () => {
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-6 col-md-4 d-none d-md-block">
-                            <SocialMedia />
+                            <SocialMedia {...sociales} />
                         </div>
                         <div className="col-6 col-md-4 text-md-center">
                             <ul className="list-unstyled mb-0 p-0">

@@ -6,8 +6,15 @@ import { motion } from "framer-motion"
 import '../assets/scss/pages/about.scss';
 
 import person from '../assets/img/person.jpg';
+import { useData } from '../components/useData';
 
 const About = () => {
+    const {data} = useData('/api/portafolio');
+
+    if(!data) return 'loading gallery';
+
+    const dataMacy = {gallery: data, tipo: 'portafolio'};
+
     return(
         <motion.div 
         
@@ -22,8 +29,12 @@ const About = () => {
 
 
                     <div className="row justify-content-center pt-5 mb-5 pb-5">
-                        <div className="col-12 mb-4">
-                            <p>FunLIFE specializes in organizing and planning conventions and group events for luxury and premium brands. For over 15 years, the agency has provided a first-class full-service that takes care of all the group travel, accommodations, and event management and production needs from beginning -to-end.</p>
+                        <div className="col-12 mb-4 text-justify">
+                            <p>For over 15 years FunLIFE has provided first-class corporate event planning and travel services throughout Mexico and Latin America. We specialize in organizing and producing small, medium and large events for luxury and premium brands.</p>
+                            <p>FunLIFE creates and produces in-person events that transcend and inspire, such as corporate conventions, meetings and conferences, product launches, executive VIP events, team-building programs, and incentive trips.</p>
+                            <p>FunLIFE strives to truly understands the needs of our clients and we do that by first getting to know them as partners who can trust that we are by their side to strategize, design, and execute their vision like no one else in the industry.</p>
+                            <p>FunLIFE’s years of experience, deep institutional knowledge and network allows us to source, contract and manage the best local resources and talent throughout Mexico and the LATAM region. This can be a significant benefit and advantage when managing all the working pieces and intricacies of planning and budgeting an event of any size. We aim to take the pressure off our client’s shoulders and replace it with an unforgettable experience — from beginning to end.</p>
+                            <p>Complementing our corporate event planning services is our corporate travel and accommodations services. As a certified travel agency, our trained agents can book and arrange both air and ground travel and the necessary accommodations. This combination of travel and event services is something that makes FunLIFE unique and special. Our full-service event planning and travel services will take care of all the hassle of travel, hotel accommodations, as well as the total event management and production. FunLIFE is the premier corporate event planning agency you want by your side this side of the hemisphere.</p>
                         </div>
 
                         <div className="col-12 col-md-6">
@@ -65,7 +76,7 @@ const About = () => {
                     <TitulosSeccion title={"Portafolio"} />
 
                     <div className="py-5">
-                        <MacyGallery />
+                        <MacyGallery {...dataMacy} />
                     </div>
                 </div>
             </div>

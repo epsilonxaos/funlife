@@ -3,8 +3,15 @@ import '../assets/scss/pages/gallery.scss';
 import TitulosSeccion from '../components/titulos';
 import MacyGallery from '../components/macyGallery';
 import { motion } from "framer-motion"
+import { useData } from '../components/useData';
 
 const Gallery = () => {
+    const {data} = useData('/api/galeria');
+
+    if(!data) return 'loading gallery';
+
+    const dataMacy = {gallery: data, tipo: 'galeria'};
+
     return(
         <motion.div 
             initial={{ opacity: 0 }}
@@ -14,7 +21,7 @@ const Gallery = () => {
                 <TitulosSeccion title={"Gallery"} />
 
                 <div className="py-5">
-                    <MacyGallery />
+                    <MacyGallery {...dataMacy} />
                 </div>
             </div>
         </motion.div>

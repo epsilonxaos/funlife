@@ -58,8 +58,10 @@ body {
             line-height: 7.569vw;
         }
 
-        @media (orientation: landscape) {
-            font-size: 65px;
+        @media (pointer: coarse) {
+            @media (orientation: landscape) {
+                font-size: 65px;
+            }
         }
 
         .extraTitle {
@@ -93,3 +95,5 @@ body {
         }
     }
 }
+
+@import './loading';

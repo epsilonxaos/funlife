@@ -10,13 +10,15 @@ import { motion } from "framer-motion"
 
 import TitulosSeccion from '../components/titulos';
 
-const Home = () => {
+const Home = ({videos}) => {
+    const dataVideo = videos;
+
     return(
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }} className="home">
-            <VideoPortada />
+            <VideoPortada {...dataVideo} />
             <QuienesSomos />
 
             <div className="services">

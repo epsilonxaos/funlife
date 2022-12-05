@@ -6,11 +6,11 @@ const QuienesSomos = () => {
         <div className="quienesSomos">
             <div className="container">
                 <div className="row">
-                    <div className="col-12 col-md-9 col-xl-8">
+                    <div className="col-12 col-md-11 col-xl-10">
                         {/* <h1>FUNLIFE INTERNATIONAL</h1> */}
-                        <TitulosSeccion extra={""} title={"FunLIFE International"} />
+                        <TitulosSeccion extra={""} title={"TRAVEL AND EVENTS"} />
                         <p>
-                            specializes in organizing and planning conventions and group events for luxury and premium brands.
+                            We specialize in specializes in organizing and planning conventions and group events for luxury and premium brands.
                         </p>
                     </div>
                 </div>

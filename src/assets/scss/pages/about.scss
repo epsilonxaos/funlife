@@ -8,11 +8,24 @@
     .aboutus {
         @include padding-for-sections(180px, 20px);
 
-        .title {
-            font-size: 45px
+        @media screen and (max-width: 768px) {
+            .title {
+                font-size: 45px
+            }
+            .title .extraTitle {
+                top: -12px
+            }
         }
-        .title .extraTitle {
-            top: -12px
+
+        @media screen and (min-width: 1366px) {
+            .title {
+                font-size: 5vw;
+                line-height: 5vw;
+            }
+            .title .extraTitle {
+                top: -16px;
+                left: 5vw;
+            }
         }
 
         .equipo {

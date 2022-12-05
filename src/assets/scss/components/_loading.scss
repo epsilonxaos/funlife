@@ -1,0 +1,24 @@
+// .loading {
+//     background-color: $oscuro;
+//     flex-direction: column;
+
+//     img {
+//         width: 100%;
+//         max-width: 350px;
+//     }
+// }
+
+.loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .bg-black {
+        background-color: grey;
+        z-index: 50;
+        width: 100%;
+        position: relative;
+    }
+}

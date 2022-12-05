@@ -1,7 +1,14 @@
 import TitulosSeccion from "./titulos";
 import MacyGallery from "./macyGallery";
+import { useData } from "./useData";
+
 
 const Galeria = () => {
+    const {data} = useData('/api/galeria');
+
+    if(!data) return 'loading gallery';
+
+    const dataMacy = {gallery: data, tipo: 'galeria'};
 
     return(
         <div className="galeria">
@@ -9,7 +16,7 @@ const Galeria = () => {
                 <TitulosSeccion title={"Gallery"} />
 
                 <div className="py-5">
-                    <MacyGallery />
+                    <MacyGallery {...dataMacy} />
                 </div>
             </div>
         </div>
