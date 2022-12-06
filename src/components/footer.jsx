@@ -22,7 +22,11 @@ const footer = ({sociales, correo, telefonos}) => {
                             <img src={estrellas} alt="Estrellas instagram" className="mr-3" />
                             <span><TitulosSeccion styleClass={'titulo-small'} title={'@funlife.travelandevents'} /></span>
                         </div>
-                        <div className="App" dangerouslySetInnerHTML={{__html: iframeInstagram}}></div>
+						
+						<ul className="juicer-feed" data-feed-id="shogunepsiln" data-origin="embed-code" data-per="6" data-columns="3">
+							<h1 className="referral"><a href="https://www.juicer.io">Powered by Juicer.io</a></h1>
+						</ul>
+                        {/* <div className="App" dangerouslySetInnerHTML={{__html: iframeInstagram}}></div> */}
                     </div>
                     <div className="col-12 col-md-10 col-lg-8 pt-5">
                         <p className="mb-4">Connect with us today for a free consultancy. We have offices in Mexico and U.S.A - and we are fluent in English and Spanish.</p>
