@@ -13,7 +13,16 @@ const Galeria = () => {
     return(
         <div className="galeria">
             <div className="container text-center">
-                <TitulosSeccion title={"Gallery"} />
+                    <div
+                        className="text-center"
+                        data-scroll
+                        data-scroll-speed="1"
+                        data-scroll-position="-120"
+                        data-scroll-direction="horizontal"
+
+                    >
+                        <TitulosSeccion title={"Gallery"} />
+                    </div>
 
                 <div className="py-5">
                     <MacyGallery {...dataMacy} />

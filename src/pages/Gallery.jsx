@@ -13,12 +13,22 @@ const Gallery = () => {
     const dataMacy = {gallery: data, tipo: 'galeria'};
 
     return(
-        <motion.div 
+        <motion.div
+            data-scroll-section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }} className="galeria">
             <div className="container text-center">
-                <TitulosSeccion title={"Gallery"} />
+                <div
+                    className="text-center"
+                    data-scroll
+                    data-scroll-speed="1"
+                    data-scroll-position="-120"
+                    data-scroll-direction="horizontal"
+
+                >
+                    <TitulosSeccion title={"Gallery"} />
+                </div>
 
                 <div className="py-5">
                     <MacyGallery {...dataMacy} />

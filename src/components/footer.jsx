@@ -8,8 +8,13 @@ const footer = ({sociales, correo, telefonos}) => {
 
     const iframeInstagram = `<iframe src="https://snapwidget.com/embed/1016316" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width: 100%; height:510px"></iframe>`;
     return(
-        <footer className="pt-5 pb-3">
-            <div className="container">
+        <footer className="pt-5 pb-3"
+            data-scroll-section
+        >
+            <div className="container"
+                data-scroll
+                data-scroll-position="0"
+            >
                 <div className="row mb-3 text-center justify-content-center">
                     <div className="col-12">
 

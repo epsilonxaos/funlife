@@ -2,11 +2,12 @@ import {
 	Switch,
 	Route,
 	useLocation,
-	useHistory
+	BrowserRouter as Router,
 } from 'react-router-dom';
-import { useState, useEffect } from "react";
 
-import { AnimatePresence } from 'framer-motion';
+import { LocomotiveScrollProvider, ScrollInstance } from "react-locomotive-scroll";
+import { useRef } from "react";
+// import 'locomotive-scroll/dist/locomotive-scroll.css'
 
 import Header from './components/header';
 import Footer from './components/footer';
@@ -18,60 +19,62 @@ import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
-import Loading from './pages/Loading';
-
 import { useData } from './components/useData';
 
-function App() {
-	const location = useLocation();
+
+function App() {	
 	const { data } = useData('/api/website');
-	const [test, setTest] = useState(false);
-
-	// return <Loading />
-	// setTimeout(() => {
-	// 	setTest(true)
-	// }, 2000);
-	// if (!test) return <Loading />;
-
-	// return 'hola'
+	const containerRef = useRef(null);
 
 	if (!data) return 'Loading';
-
 
 	const dataHeader = {sociales: {'instagram': data.url_instagram}};
 	const dataFooter = {sociales: {'instagram': data.url_instagram}, correo: data.email, telefonos: {usa: data.telefono_usa, mx: data.telefono_mx}}
 	const dataHome = {videos: {desk: data.video, movil: data.video_movil}}
 
-	console.log(data)
-
 	return (
-		<AnimatePresence exitBeforeEnter>
-			<ScrollHandler key={'scrolls'} />
-			<Header key={'header'} {...dataHeader} />
+		<Router>
 
-			<main>
-				<Switch location={location} key={location.pathname}>
-					<Route exact path="/" key={'home'}>
-						<Home {...dataHome} />
-					</Route>
-					<Route path="/gallery" key={'galeria'}>
-						<Gallery />
-					</Route>
-					<Route path="/services" key={'servicios'}>
-						<Services />
-					</Route>
-					<Route path="/about" key={'nosotros'}>
-						<About />
-					</Route>
-					<Route path="/contact" key={'contacto'}>
-						<Contact />
-					</Route>
-				</Switch>
-			</main>
+			<ScrollHandler />
+			
 
-			<Footer key={'fooetr'} {...dataFooter} />
-		</AnimatePresence>
+			<LocomotiveScrollProvider
+				options={{ smooth: true }}
+				containerRef={containerRef}
+				onLocationChange={scroll => scroll.scrollTo(0, { duration: 0, disableLerp: true })} // If you want to reset the scroll position to 0 for example
+				onUpdate={(init) => {
+					if(window.innerWidth < 768) init.destroy();
+				}}
+			>
+
+				<Header {...dataHeader} />
+			
+
+				<main data-scroll-container ref={containerRef}>
+					<Switch>
+						<Route exact path="/">
+							<Home {...dataHome} />
+						</Route>
+						<Route path="/gallery">
+							<Gallery />
+						</Route>
+						<Route path="/services">
+							<Services />
+						</Route>
+						<Route path="/about">
+							<About />
+						</Route>
+						<Route path="/contact">
+							<Contact />
+						</Route>
+					</Switch>
+				<Footer {...dataFooter} />
+				</main>
+
+			</LocomotiveScrollProvider>
+		</Router>
 	)
 }
 
-export default App
+export default App;
+

@@ -12,13 +12,20 @@ const Contact = () => {
     }
 
     return (
-        <motion.div 
+        <motion.div
+            data-scroll-section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }} className="contacto">
             <div className="container">
 
-                <div className="text-center">
+                <div
+                    className="text-center"
+                    data-scroll
+                    data-scroll-speed="1"
+                    data-scroll-position="left"
+                    data-scroll-direction="horizontal"
+                >
                     <TitulosSeccion title={'Contact'} />
                 </div>
 
