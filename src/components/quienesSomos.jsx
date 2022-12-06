@@ -1,7 +1,9 @@
 import TitulosSeccion from "./titulos";
-
+import { useTranslation } from 'react-i18next';
 
 const QuienesSomos = () => {
+	const { t } = useTranslation();
+
     return (
         <div className="quienesSomos">
             <div className="container">
@@ -20,7 +22,7 @@ const QuienesSomos = () => {
                             data-scroll-speed="1"
                             data-scroll-position="top"
                         >
-                            <p> We specialize in specializes in organizing and planning conventions and group events for luxury and premium brands. </p>
+                            <p>{t('home.intro_text')}</p>
                         </div>
                     </div>
                 </div>

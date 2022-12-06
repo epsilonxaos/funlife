@@ -6,6 +6,7 @@ import $ from 'jquery'
 import logo from '../assets/img/logo-header.svg';
 // import logo from '../assets/img/logo/FunLIFE-04.svg';
 import btn from '../assets/img/estrellas-bln.png';
+import i18next from 'i18next';
 
 const header = ({sociales}) => {
     const [openMenu, setOpenMenu] = useState(false);
@@ -52,6 +53,11 @@ const header = ({sociales}) => {
                             </ul>
                         </div>
                         <div className="col-6 col-md-4 text-right">
+							<ul className="list-unstyled d-flex align-items-center justify-content-center">
+								<li><button onClick={() => {i18next.changeLanguage('en')}}>EN</button></li>
+								<li>/</li>
+								<li><button onClick={() => {i18next.changeLanguage('es')}}>ES</button></li>
+							</ul>
                             {
                                 !openMenu ? 
                                     <img src={btn} width="35px" style={{userSelect: 'none', cursor: 'pointer'}} alt="Boton de menu" onClick={handlerClickMenu} data-toggle="modal" data-target="#mdMenu" />
