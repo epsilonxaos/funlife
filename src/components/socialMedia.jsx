@@ -1,9 +1,14 @@
-const socialMedia = ({instagram}) => {
+const socialMedia = ({instagram, titleShow}) => {
     return(
         <>
-        {console.log(instagram)}
-            <a href={instagram} target="_blank" rel="noopener noreferrer"><i className="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
-            {/* <a href="#" className="ml-3"><i className="fa fa-facebook" aria-hidden="true"></i></a> */}
+            <a href={instagram} target="_blank" rel="noopener noreferrer">
+                <i className="fa fa-instagram fa-lg" aria-hidden="true"></i>
+                {
+                    titleShow ?
+                        <span className="small d-none d-lg-inline-block position-relative ml-1" style={{top: "-1px"}}>@FUNLIFE.TRAVELANDEVENTS</span>
+                    : <></>
+                }
+            </a>
         </>
     )
 }

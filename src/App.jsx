@@ -19,62 +19,84 @@ import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
+
+import { useLocomotiveScroll } from 'react-locomotive-scroll'
+
+import { AnimatePresence } from 'framer-motion';
+
 import './components/i18n';
 
 import { useData } from './components/useData';
+import { useState } from 'react';
 
 
 function App() {	
+	const {pathname} = useLocation();
 	const { data } = useData('/api/website');
 	const containerRef = useRef(null);
+	const [navbar, setNavbar] = useState(false);
+	
 
-	if (!data) return 'Loading';
+	if (!data) return ;
 
-	const dataHeader = {sociales: {'instagram': data.url_instagram}};
+	const dataHeader = {sociales: {'instagram': data.url_instagram, 'titleShow': true}};
 	const dataFooter = {sociales: {'instagram': data.url_instagram}, correo: data.email, telefonos: {usa: data.telefono_usa, mx: data.telefono_mx}}
 	const dataHome = {videos: {desk: data.video, movil: data.video_movil}}
+	const changeBackground = () => {
 
+		if (window.scrollY >= 66) {
+			setNavbar(true)
+        } else {
+			setNavbar(false)
+        }
+    }
+	
 	return (
-		<Router>
+		<>
+		
 
-			<ScrollHandler />
+		<LocomotiveScrollProvider
+			options={{ smooth: true }}
+			containerRef={containerRef}
+			watch={
+				[pathname]
+			}
+			location={pathname}
+			onLocationChange={scroll => scroll.scrollTo(0, { duration: 0, disableLerp: true })} // If you want to reset the scroll position to 0 for example
+			onUpdate={(init) => {
+				changeBackground();
+        		window.addEventListener("scroll", changeBackground);
+				console.log("update")
+				if(window.innerWidth < 768) init.destroy();
+			}}
 			
-
-			<LocomotiveScrollProvider
-				options={{ smooth: true }}
-				containerRef={containerRef}
-				onLocationChange={scroll => scroll.scrollTo(0, { duration: 0, disableLerp: true })} // If you want to reset the scroll position to 0 for example
-				onUpdate={(init) => {
-					if(window.innerWidth < 768) init.destroy();
-				}}
-			>
-
-				<Header {...dataHeader} />
+		>
 			
+			<Header {...dataHeader} />
 
-				<main data-scroll-container ref={containerRef}>
-					<Switch>
-						<Route exact path="/">
-							<Home {...dataHome} />
-						</Route>
-						<Route path="/gallery">
-							<Gallery />
-						</Route>
-						<Route path="/services">
-							<Services />
-						</Route>
-						<Route path="/about">
-							<About />
-						</Route>
-						<Route path="/contact">
-							<Contact />
-						</Route>
-					</Switch>
-				<Footer {...dataFooter} />
-				</main>
+			<main data-scroll-container ref={containerRef}>
+				<Switch>
+					<Route exact path="/">
+						<Home {...dataHome} />
+					</Route>
+					<Route path="/gallery">
+						<Gallery />
+					</Route>
+					<Route path="/services">
+						<Services />
+					</Route>
+					<Route path="/about">
+						<About />
+					</Route>
+					<Route path="/contact">
+						<Contact />
+					</Route>
+				</Switch>
+			<Footer {...dataFooter} />
+			</main>
 
-			</LocomotiveScrollProvider>
-		</Router>
+		</LocomotiveScrollProvider>
+		</>
 	)
 }
 

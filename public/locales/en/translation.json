@@ -1,3 +1,9 @@
 {
-	"home.intro_text": "We specialize in specializes in organizing and planning conventions and group events for luxury and premium brands."
+	"menu.home": "HOME",
+	"menu.services": "SERVICES",
+	"menu.about": "ABOUT",
+	"menu.gallery": "GALLERY",
+	"menu.contact": "CONTACT",
+
+	"home.intro_text": "We specialize in organizing and planning conventions and group events for luxury and premium brands."
 }

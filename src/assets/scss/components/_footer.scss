@@ -4,11 +4,38 @@ footer {
         margin: 10px 0;
     }
 
+    #titleInst, .juicer-button {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .juicer-button {
+        margin: 0 !important;
+    }
+
+    .j-stacker-wrapper {
+        img {
+            filter: none !important;
+        }
+    }
+
+    .extra {
+        @media screen and (min-width: 786px) {
+            font-size: 18px;
+        }
+    }
+
     .titulo-small .title {
         font-size: 16px;
         
         @media screen and (min-width: 768px) {
             font-size: 2.5vw;
         }
+    }
+}
+
+.j-overlay-content {
+    img {
+        filter: none !important;
     }
 }

@@ -1,3 +1,9 @@
 {
-	"home.intro_text": "Nosotros nos especializamos en muchas cosas"
+	"menu.home": "INICIO",
+	"menu.services": "SERVICIOS",
+	"menu.about": "NOSOTROS",
+	"menu.gallery": "GALERÍA",
+	"menu.contact": "CONTACTO",
+	
+	"home.intro_text": "Nos especializamos en la organización y planificación de convenciones y eventos grupales para marcas de lujo y premium."
 }

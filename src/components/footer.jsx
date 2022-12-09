@@ -16,24 +16,24 @@ const footer = ({sociales, correo, telefonos}) => {
                 data-scroll-position="0"
             >
                 <div className="row mb-3 text-center justify-content-center">
-                    <div className="col-12">
+                    <div className="col-12 pb-5">
 
                         <div className="d-flex align-items-center justify-content-center flex-column flex-sm-row text-uppercase mb-4">
-                            <img src={estrellas} alt="Estrellas instagram" className="mr-3" />
-                            <span><TitulosSeccion styleClass={'titulo-small'} title={'@funlife.travelandevents'} /></span>
+                            <img src={estrellas} alt="Estrellas instagram" className="mr-3" width={"35px"} />
+                            <span><h3>@funlife.travelandevents</h3></span>
                         </div>
 						
 						<ul className="juicer-feed" data-feed-id="shogunepsiln" data-origin="embed-code" data-per="6" data-columns="3">
-							<h1 className="referral"><a href="https://www.juicer.io">Powered by Juicer.io</a></h1>
+							<h1 className="referral"><a id="titleInst" href="https://www.juicer.io">Powered by Juicer.io</a></h1>
 						</ul>
                         {/* <div className="App" dangerouslySetInnerHTML={{__html: iframeInstagram}}></div> */}
                     </div>
-                    <div className="col-12 col-md-10 col-lg-8 pt-5">
-                        <p className="mb-4">Connect with us today for a free consultancy. We have offices in Mexico and U.S.A - and we are fluent in English and Spanish.</p>
+                    <div className="col-12 col-md-10 col-lg-8 pt-5 pb-5">
+                        <p className="mb-4 extra">Connect with us today for a free consultancy. We have offices in Mexico and U.S.A - and we are fluent in English and Spanish.</p>
                     </div>
                 </div>
 
-                <div className="row align-items-center ">
+                <div className="row align-items-center pt-5">
                     <div className="col-6 order-1">
                         <a href={`mailto:${correo}`}>{correo}</a>
                     </div>

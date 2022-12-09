@@ -8,7 +8,7 @@ const QuienesSomos = () => {
         <div className="quienesSomos">
             <div className="container">
                 <div className="row">
-                    <div className="col-12 col-md-11 col-xl-10">
+                    <div className="col-12 col-md-10 col-xl-8">
                         {/* <h1>FUNLIFE INTERNATIONAL</h1> */}
                         <div
                             data-scroll

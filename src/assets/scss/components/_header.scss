@@ -30,6 +30,29 @@ header {
             height: 60px;
         }
     }
+
+    .languaje {
+        margin: 0;
+        padding: 0;
+
+        button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            outline: none;
+
+            &.active {
+                font-weight: 600;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .btnStar {
+        width: 30px;
+        user-select: none;
+        cursor: pointer;
+    }
 }
 
 // MODAL MENU

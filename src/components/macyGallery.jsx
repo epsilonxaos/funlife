@@ -4,24 +4,6 @@ import baseURL from './api';
 import SimpleLightbox from 'simple-lightbox';
 import 'simple-lightbox/dist/simpleLightbox.min.css';
 
-const macyConfig = {
-    container: '#macy-container',
-    trueOrder: false,
-    waitForImages: false,
-    useOwnImageLoader: false,
-    debug: true,
-    mobileFirst: true,
-    columns: 1,
-    margin: {
-        y: 16,
-        x: '2%',
-    },
-    breakAt: {
-        940: 4,
-        520: 3,
-        400: 2
-    }
-}
 
 const MacyGallery = ({gallery, tipo}) => {
     const handlerClickEvent = async(id) => {
@@ -35,6 +17,35 @@ const MacyGallery = ({gallery, tipo}) => {
         var lightbox = SimpleLightbox.open({
             items: imgs
         });        
+    }
+    let breaks
+    if(tipo === 'portafolio'){
+        breaks ={
+            940: 2,
+            520: 2,
+            400: 2
+        }
+    } else {
+        breaks ={
+            940: 4,
+            520: 3,
+            400: 2
+        }
+    }
+
+    const macyConfig = {
+        container: '#macy-container',
+        trueOrder: false,
+        waitForImages: false,
+        useOwnImageLoader: false,
+        debug: true,
+        mobileFirst: true,
+        columns: 1,
+        margin: {
+            y: 16,
+            x: '2%',
+        },
+        breakAt: breaks
     }
 
     useEffect(() =>{
