@@ -4,6 +4,7 @@ import TitulosSeccion from '../components/titulos';
 import { motion } from "framer-motion"
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import FormContact from '../components/form';
 
 const Contact = () => {
     const [formActive, setFormActive] = useState('contacto');
@@ -41,7 +42,8 @@ const Contact = () => {
                             <option value="cotizacion2">Cotización para viaje</option>
                         </select> */}
 
-                        <form action="" method="post">
+						<FormContact />
+                        {/* <form action="" method="post">
                             <div className="row">
                                 <div className="col-12 col-md-6 mb-4 form-group">
                                     <label className="lb" htmlFor="nombre">{t('nombre')} <span className="text-danger">*</span></label>
@@ -87,7 +89,7 @@ const Contact = () => {
                                     <button className="btn btn-send">{t('enviar')}</button>
                                 </div>
                             </div>
-                        </form>
+                        </form> */}
                     </div>
                 </div>
             </div>
