@@ -6,11 +6,14 @@ import { motion } from "framer-motion"
 import { useData } from '../components/useData';
 import { useTranslation } from 'react-i18next';
 
+import { AnimatePresence } from 'framer-motion';
+import Loading from './Loading';
+
 const Gallery = () => {
     const {data} = useData('/api/galeria');
     const { t } = useTranslation();
 
-    if(!data) return 'loading gallery';
+    if (!data) return <AnimatePresence mode="wait"><Loading /></AnimatePresence> ;
 
     const dataMacy = {gallery: data, tipo: 'galeria'};
 
@@ -19,7 +22,8 @@ const Gallery = () => {
             data-scroll-section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }} className="galeria">
+            exit={{ opacity: 0 }}
+			className="galeria">
             <div className="container text-center">
                 <div
                     className="text-center"

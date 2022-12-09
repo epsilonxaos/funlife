@@ -8,11 +8,14 @@ import '../assets/scss/pages/about.scss';
 import person from '../assets/img/person.jpg';
 import { useData } from '../components/useData';
 
+import { AnimatePresence } from 'framer-motion';
+import Loading from './Loading';
+
 const About = () => {
     const {data} = useData('/api/portafolio');
     const { t } = useTranslation();
 
-    if(!data) return 'loading gallery';
+    if (!data) return <AnimatePresence><Loading /></AnimatePresence> ;
 
     const dataMacy = {gallery: data, tipo: 'portafolio'};
 

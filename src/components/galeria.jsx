@@ -1,16 +1,12 @@
 import TitulosSeccion from "./titulos";
 import MacyGallery from "./macyGallery";
-import { useData } from "./useData";
 import { useTranslation } from 'react-i18next';
 
 
-const Galeria = () => {
-    const {data} = useData('/api/galeria');
-    const { t } = useTranslation();
+const Galeria = ({galeria}) => {
+	const { t } = useTranslation();
 
-    if(!data) return 'loading gallery';
-
-    const dataMacy = {gallery: data, tipo: 'galeria'};
+	const dataMacy = {gallery: galeria, tipo: 'galeria'};
 
     return(
         <div className="galeria">

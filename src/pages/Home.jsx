@@ -6,12 +6,20 @@ import QuienesSomos from '../components/quienesSomos';
 import Servicios from '../components/servicios';
 import Galeria from '../components/galeria';
 import { useTranslation } from 'react-i18next';
+import { AnimatePresence } from 'framer-motion';
+import Loading from './Loading';
+import { useData } from '../components/useData';
 
 import TitulosSeccion from '../components/titulos';
 
 const Home = ({videos}) => {
-    const dataVideo = videos;
+	const dataVideo = videos;
     const { t } = useTranslation();
+	const {data} = useData('/api/galeria');
+	
+    if (!data) return <AnimatePresence><Loading /></AnimatePresence> ;
+
+    const dataGaleria = {galeria: data};
 
     return(
         <div className="home" data-scroll-section>
@@ -37,7 +45,7 @@ const Home = ({videos}) => {
                 </div>
             </div>
 
-            <Galeria />
+            <Galeria {...dataGaleria}/>
         </div>
     )
 }
