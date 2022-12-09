@@ -1,6 +1,7 @@
 import {useForm} from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import Swal from 'sweetalert2'
+import reCAPTCHA from "react-google-recaptcha"
 
 const FormContact = () => {
 	const { t } = useTranslation();
@@ -51,6 +52,9 @@ const FormContact = () => {
 				<div className="col-12 mb-4 form-group">
 					<label className="lb" htmlFor="comentarios">{t('comentarios')} <span className="text-danger">*</span></label>
 					<textarea className="form-control tx" {...register("mensaje")} cols="30" rows="5"></textarea>
+				</div>
+				<div className="col-12 md-4">
+					<reCAPTCHA />
 				</div>
 				<div className="col-12 text-center">
 					<input type="submit" className="btn btn-send" value={t('enviar')} />
