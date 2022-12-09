@@ -35,8 +35,6 @@ const header = ({sociales}) => {
         }
     }
 
-    console.log(scroll)
-
     useEffect(() => {
         if(!scroll) return;
         scroll.on('scroll', (instance) => {

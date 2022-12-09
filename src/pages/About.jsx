@@ -15,7 +15,7 @@ const About = () => {
     const {data} = useData('/api/portafolio');
     const { t } = useTranslation();
 
-    if (!data) return <AnimatePresence><Loading /></AnimatePresence> ;
+    if (!data) return <Loading /> ;
 
     const dataMacy = {gallery: data, tipo: 'portafolio'};
 

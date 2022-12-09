@@ -13,7 +13,7 @@ const Gallery = () => {
     const {data} = useData('/api/galeria');
     const { t } = useTranslation();
 
-    if (!data) return <AnimatePresence mode="wait"><Loading /></AnimatePresence> ;
+    if (!data) return <Loading />;
 
     const dataMacy = {gallery: data, tipo: 'galeria'};
 

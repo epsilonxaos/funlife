@@ -6,7 +6,7 @@ import QuienesSomos from '../components/quienesSomos';
 import Servicios from '../components/servicios';
 import Galeria from '../components/galeria';
 import { useTranslation } from 'react-i18next';
-import { AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Loading from './Loading';
 import { useData } from '../components/useData';
 
@@ -17,12 +17,18 @@ const Home = ({videos}) => {
     const { t } = useTranslation();
 	const {data} = useData('/api/galeria');
 	
-    if (!data) return <AnimatePresence><Loading /></AnimatePresence> ;
+    if (!data) return <Loading /> ;
 
     const dataGaleria = {galeria: data};
 
     return(
-        <div className="home" data-scroll-section>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="home"
+            data-scroll-section
+        >
             <VideoPortada {...dataVideo}/>
             
             <QuienesSomos />
@@ -46,7 +52,7 @@ const Home = ({videos}) => {
             </div>
 
             <Galeria {...dataGaleria}/>
-        </div>
+        </motion.div>
     )
 }
 
