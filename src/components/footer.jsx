@@ -1,12 +1,12 @@
 import SocialMedia from './socialMedia';
-
+import TitulosSeccion from './titulos';
+import { useTranslation } from 'react-i18next';
 import logo from '../assets/img/logo/FunLIFE-01.svg';
 import estrellas from '../assets/img/estrellas-bln.png';
-import TitulosSeccion from './titulos';
 
 const footer = ({sociales, correo, telefonos}) => {
+    const { t } = useTranslation();
 
-    const iframeInstagram = `<iframe src="https://snapwidget.com/embed/1016316" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width: 100%; height:510px"></iframe>`;
     return(
         <footer className="pt-5 pb-3"
             data-scroll-section
@@ -18,7 +18,7 @@ const footer = ({sociales, correo, telefonos}) => {
                 <div className="row mb-3 text-center justify-content-center">
                     <div className="col-12 pb-5">
 
-                        <div className="d-flex align-items-center justify-content-center flex-column flex-sm-row text-uppercase mb-4">
+                        <div className="d-flex align-items-center justify-content-center flex-column flex-sm-row mb-4">
                             <img src={estrellas} alt="Estrellas instagram" className="mr-3" width={"35px"} />
                             <span><h3>@funlife.travelandevents</h3></span>
                         </div>
@@ -26,10 +26,9 @@ const footer = ({sociales, correo, telefonos}) => {
 						<ul className="juicer-feed" data-feed-id="shogunepsiln" data-origin="embed-code" data-per="6" data-columns="3">
 							<h1 className="referral"><a id="titleInst" href="https://www.juicer.io">Powered by Juicer.io</a></h1>
 						</ul>
-                        {/* <div className="App" dangerouslySetInnerHTML={{__html: iframeInstagram}}></div> */}
                     </div>
                     <div className="col-12 col-md-10 col-lg-8 pt-5 pb-5">
-                        <p className="mb-4 extra">Connect with us today for a free consultancy. We have offices in Mexico and U.S.A - and we are fluent in English and Spanish.</p>
+                        <p className="mb-4 extra">{t('footer.texto')}</p>
                     </div>
                 </div>
 
@@ -44,7 +43,7 @@ const footer = ({sociales, correo, telefonos}) => {
                     <div className="col-12 order-3"><hr /></div>
 
                     <div className="col-12 col-md-5 col-lg-6 order-5 order-md-4 text-center text-md-left">
-                        <p className="font-weight-bold small">ALL RIGHTS RESERVED © 2022 | FUNLIFE INTERNATIONAL</p>
+                        <p className="font-weight-bold small">{t('footer.derechos')} © 2022 | FUNLIFE INTERNATIONAL</p>
                     </div>
                     <div className="col-12 col-md-7 col-lg-6 order-4 order-md-5 text-center text-md-right">
                         <p className="font-weight-bold small">

@@ -1,10 +1,12 @@
 import TitulosSeccion from "./titulos";
 import MacyGallery from "./macyGallery";
 import { useData } from "./useData";
+import { useTranslation } from 'react-i18next';
 
 
 const Galeria = () => {
     const {data} = useData('/api/galeria');
+    const { t } = useTranslation();
 
     if(!data) return 'loading gallery';
 
@@ -21,7 +23,7 @@ const Galeria = () => {
                         data-scroll-direction="horizontal"
 
                     >
-                        <TitulosSeccion title={"Gallery"} />
+                        <TitulosSeccion title={t('galeria')} />
                     </div>
 
                 <div className="py-5">

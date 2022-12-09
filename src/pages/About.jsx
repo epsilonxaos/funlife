@@ -1,6 +1,6 @@
 import MacyGallery from '../components/macyGallery';
 import TitulosSeccion from '../components/titulos';
-
+import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion"
 
 import '../assets/scss/pages/about.scss';
@@ -10,6 +10,7 @@ import { useData } from '../components/useData';
 
 const About = () => {
     const {data} = useData('/api/portafolio');
+    const { t } = useTranslation();
 
     if(!data) return 'loading gallery';
 
@@ -30,52 +31,17 @@ const About = () => {
                         data-scroll-speed="2"
                         data-scroll-position="0"
                     >
-                        <TitulosSeccion extra={"Meet the"} title={"FunLife Family"} />
+                        <TitulosSeccion extra={t('familia_sup')} title={t('familia')} />
                     </div>
 
 
                     <div className="row justify-content-center pt-5 mb-5 pb-5">
                         <div className="col-12 mb-4 text-justify">
-                            <div
-                            data-scroll
-                            data-scroll-speed="2"
-                            data-scroll-position="left"
-                            data-scroll-delay="0.1"
-                            >
-                                <p>For over 15 years FunLIFE has provided first-class corporate event planning and travel services throughout Mexico and Latin America. We specialize in organizing and producing small, medium and large events for luxury and premium brands.</p>
-                            </div>
-                            <div
-                            data-scroll
-                            data-scroll-speed="2"
-                            data-scroll-position="left"
-                            data-scroll-delay="0.2"
-                            >
-                                <p>FunLIFE creates and produces in-person events that transcend and inspire, such as corporate conventions, meetings and conferences, product launches, executive VIP events, team-building programs, and incentive trips.</p>
-                            </div>
-                            <div
-                            data-scroll
-                            data-scroll-speed="2"
-                            data-scroll-position="left"
-                            data-scroll-delay="0.3"
-                            >
-                                <p>FunLIFE strives to truly understands the needs of our clients and we do that by first getting to know them as partners who can trust that we are by their side to strategize, design, and execute their vision like no one else in the industry.</p>
-                            </div>
-                            <div
-                            data-scroll
-                            data-scroll-speed="2"
-                            data-scroll-position="left"
-                            data-scroll-delay="0.4"
-                            >
-                                <p>FunLIFE’s years of experience, deep institutional knowledge and network allows us to source, contract and manage the best local resources and talent throughout Mexico and the LATAM region. This can be a significant benefit and advantage when managing all the working pieces and intricacies of planning and budgeting an event of any size. We aim to take the pressure off our client’s shoulders and replace it with an unforgettable experience — from beginning to end.</p>
-                            </div>
-                            <div
-                            data-scroll
-                            data-scroll-speed="2"
-                            data-scroll-position="left"
-                            data-scroll-delay="0.5"
-                            >
-                                <p>Complementing our corporate event planning services is our corporate travel and accommodations services. As a certified travel agency, our trained agents can book and arrange both air and ground travel and the necessary accommodations. This combination of travel and event services is something that makes FunLIFE unique and special. Our full-service event planning and travel services will take care of all the hassle of travel, hotel accommodations, as well as the total event management and production. FunLIFE is the premier corporate event planning agency you want by your side this side of the hemisphere.</p>
-                            </div>
+                            <div data-scroll data-scroll-speed="2" data-scroll-position="left" data-scroll-delay="0.1" > <p>{t('nosotros_textos.0')}</p> </div>
+                            <div data-scroll data-scroll-speed="2" data-scroll-position="left" data-scroll-delay="0.2" > <p>{t('nosotros_textos.1')}</p> </div>
+                            <div data-scroll data-scroll-speed="2" data-scroll-position="left" data-scroll-delay="0.3" > <p>{t('nosotros_textos.2')}</p> </div>
+                            <div data-scroll data-scroll-speed="2" data-scroll-position="left" data-scroll-delay="0.4" > <p>{t('nosotros_textos.3')}</p> </div>
+                            <div data-scroll data-scroll-speed="2" data-scroll-position="left" data-scroll-delay="0.5" > <p>{t('nosotros_textos.4')}</p> </div>
                         </div>
 
                         <div className="col-12 col-md-6">
@@ -85,8 +51,8 @@ const About = () => {
                                 data-scroll-position="top"
                                 data-scroll-delay="0.7"
                                 >
-                                <h6 className="font-weight-bold text-dorado">CORPORATE AND GROUP TRAVEL</h6>
-                                <p>Our clients receive personalized services aimed to take care of all the hassle and stress with transporting and accommodating groups. Let us get your travelers mobilized and settled with first class care! We take care of ticket purchase, reservation confirmation, seat assignments, and payment for service for almost any size group.</p>
+                                <h6 className="font-weight-bold text-dorado">{t('nosotros_textos.5')}</h6>
+                                <p>{t('nosotros_textos.6')}</p>
                             </div>
                         </div>
                         <div className="col-12 col-md-6">
@@ -96,9 +62,9 @@ const About = () => {
                                 data-scroll-position="top"
                                 data-scroll-delay="0.7"
                                 >
-                            <h6 className="font-weight-bold text-dorado">CORPORATE EVENTS AND CONVENTIONS</h6>
-                            <p>Our  event planning and production support is full-service.  just tell us what, where, when, and for how many and we will make it happen!</p>
-                            <p>FunLIFE finds and secures venue spaces such as: 5-star hotels and resorts, private homes and gardens, halls, museums, restaurants, bars, mansions, haciendas, castles, beach parks, etc... specialize in creating the perfect atmosphere by planning and managing all audiovisual, lighting, furniture, fixtures and floral arrangements and equipment.</p>
+                            <h6 className="font-weight-bold text-dorado">{t('nosotros_textos.7')}</h6>
+                            <p>{t('nosotros_textos.8')}</p>
+                            <p>{t('nosotros_textos.9')}</p>
                             </div>
                         </div>
                     </div>

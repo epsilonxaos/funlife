@@ -5,5 +5,60 @@
 	"menu.gallery": "GALERÍA",
 	"menu.contact": "CONTACTO",
 	
-	"home.intro_text": "Nos especializamos en la organización y planificación de convenciones y eventos grupales para marcas de lujo y premium."
+	"home.intro_text": "Nos especializamos en la organización y planificación de convenciones y eventos grupales para marcas de lujo y premium.",
+	
+	"servicios": "SERVICIOS",
+	"eventos_titulo": "Convenciones y Eventos",
+	"eventos_textos": [
+			"Los agentes de FunLIFE trabajarán incansablemente para encontrar y asegurar el lugar y el espacio perfectos para su evento, tales como:",
+			"Hoteles y resorts de 5 estrellas, casas particulares y jardines, salones, museos, restaurantes, bares, mansiones, haciendas, castillos, parques de playa, etc...",
+			"Podemos organizar y proporcionar cualquier servicio de catering, grande o pequeño.",
+			"Proporcionar cualquier Bebida / Servicio de Bebidas",
+			"Gestionar el alquiler de muebles y decoración de cualquier tipo",
+			"Gestionar modelos y recepcionistas con talentos y servicios específicos",
+			"Podemos proporcionar seguridad personal",
+			"Organizar la cobertura de los medios, incluida la radio o la televisión",
+			"Organizar y gestionar la aparición y actuación de celebridades",
+			"Nos especializamos en crear la atmósfera perfecta mediante la planificación y gestión de todos los equipos y arreglos audiovisuales, iluminación, muebles, accesorios y florales.",
+			"Podemos organizar la cobertura de eventos con fotografía y video, DJs o cualquier otro tipo de entretenimiento en vivo, incluidos conciertos u otras actuaciones musicales en vivo."
+	],
+	"viajes_titulo": "Servicios de viaje",
+	"viajes_textos": [
+		"Nos encargamos de la compra de boletos, la confirmación de la reserva, la asignación de asientos y el pago del servicio para grupos de casi cualquier tamaño.",
+		"Nos esforzamos por estar con nuestros pasajeros en cada paso del camino, desde el momento en que salen de casa hasta que vuelven a entrar.",
+		"Nuestros servicios de viaje incluyen la compra de boletos de avión y la facilitación de transporte terrestre privado o público, para llevarlo a donde quiera ir."
+	],
+
+	"galeria": "GALERIA",
+
+
+	"footer.texto": "Contacte con nosotros hoy para una consultoría gratuita. Tenemos oficinas en México y EE. UU., y hablamos inglés y español con fluidez.",
+	"footer.derechos": "TODOS LOS DERECHOS RESERVADOS.",
+
+
+	"familia_sup": "Conoce a la",
+	"familia": "FAMILIA FUNLIFE",
+	"nosotros_textos": [
+		"Durante más de 15 años, FunLIFE ha brindado servicios de viajes y planificación de eventos corporativos de primera clase en todo México y América Latina. Nos especializamos en la organización y producción de eventos pequeños, medianos y grandes para marcas de lujo y premium.",
+		"FunLIFE crea y produce eventos presenciales que trascienden e inspiran, como convenciones corporativas, reuniones y conferencias, lanzamientos de productos, eventos ejecutivos VIP, programas de formación de equipos y viajes de incentivo.",
+		"FunLIFE se esfuerza por comprender verdaderamente las necesidades de nuestros clientes y lo hacemos primero conociéndolos como socios que pueden confiar en que estamos a su lado para elaborar estrategias, diseñar y ejecutar su visión como nadie más en la industria.",
+		"Los años de experiencia, el profundo conocimiento institucional y nuestra red de conexiones, nos permiten obtener, contratar y administrar los mejores recursos y talentos locales en todo México y la región de LATAM. Esto puede ser un beneficio y una ventaja significativos al administrar todas las piezas de trabajo y las complejidades de la planificación y el presupuesto de un evento de cualquier tamaño. Nuestro objetivo es quitar la presión de los hombros de nuestros clientes y reemplazarla con una experiencia inolvidable, de principio a fin.",
+		"Para complementar nuestros servicios de planificación de eventos corporativos, ofrecemos servicios de viajes y alojamiento corporativos. Como agencia de viajes certificada, nuestros agentes capacitados pueden reservar y organizar viajes por vía aérea o terrestres y el alojamiento necesario. Esta combinación de servicios de viajes y eventos es algo que hace que FunLIFE sea único y especial. Nuestros servicios completos de planificación de eventos y viajes se encargarán de todas las molestias de los viajes, el alojamiento en hoteles, así como de la gestión y producción total del evento. FunLIFE es la principal agencia de planificación de eventos corporativos que desea tener a su lado en este lado del hemisferio.",
+
+		"VIAJES CORPORATIVOS Y DE GRUPOS",
+		"Nuestros clientes reciben servicios personalizados destinados a solucionar todas las molestias y el estrés relacionados con el transporte y el alojamiento de grupos. ¡Permítanos movilizar y acomodar a sus viajeros con atención de primera clase! Nos encargamos de la compra de boletos, la confirmación de la reserva, la asignación de asientos y el pago del servicio para grupos de casi cualquier tamaño.",
+
+		"EVENTOS Y CONVENCIONES CORPORATIVAS",
+		"Nuestro soporte de planificación y producción de eventos es de servicio completo. ¡solo díganos qué, dónde, cuándo y para cuántos y lo haremos realidad!",
+		"FunLIFE encuentra y asegura espacios para eventos tales como: hoteles y resorts de 5 estrellas, casas y jardines privados, salones, museos, restaurantes, bares, mansiones, haciendas, castillos, parques de playa, etc... se especializan en crear la atmósfera perfecta mediante la planificación y la gestión de todos los audiovisuales, iluminación, mobiliario, accesorios y arreglos florales y equipos."
+	],
+
+	"contacto": "CONTACTO",
+	"nombre": "NOMBRE",
+	"apellido": "APELLIDOS",
+	"email": "CORREO ELECTRÓNICO",
+	"telefono": "TELÉFONO",
+	"compania": "COMPAÑIA",
+	"comentarios": "COMENTARIOS",
+	"enviar": "Enviar"
 }

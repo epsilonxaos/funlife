@@ -5,7 +5,7 @@ const socialMedia = ({instagram, titleShow}) => {
                 <i className="fa fa-instagram fa-lg" aria-hidden="true"></i>
                 {
                     titleShow ?
-                        <span className="small d-none d-lg-inline-block position-relative ml-1" style={{top: "-1px"}}>@FUNLIFE.TRAVELANDEVENTS</span>
+                        <span className="small d-none d-lg-inline-block position-relative ml-1" style={{top: "-1px"}}>@funlife.travelandevents</span>
                     : <></>
                 }
             </a>
