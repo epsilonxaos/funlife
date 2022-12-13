@@ -2,17 +2,34 @@ import {useForm} from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import Swal from 'sweetalert2'
 import reCAPTCHA from "react-google-recaptcha"
+import baseURL from './api';
+import { useState } from 'react';
 
 const FormContact = () => {
 	const { t } = useTranslation();
 	const { register, formState: { errors }, handleSubmit, } = useForm();
+	const [enviado, setEnviado] = useState(false);
 
 	const onSubmits = (data) => {
-		console.log(data);
+		setEnviado(true)
 	
+		var formdata = new FormData();
+		formdata.append("nombre", data.nombre);
+		formdata.append("apellidos", data.apellidos);
+		formdata.append("telefono", data.telefono);
+		formdata.append("compania", data.compania);
+		formdata.append("mensaje", data.mensaje);
+		formdata.append("email", data.email);
 
-		setTimeout(() => {
-			
+		var requestOptions = {
+		method: 'POST',
+		body: formdata,
+		redirect: 'follow'
+		};
+
+		fetch(baseURL+"api/sendMail", requestOptions)
+		.then(response => response.json())
+		.then(result => {
 			Swal.fire({
 				icon: 'success',
 				title: 'Mensaje enviado',
@@ -23,7 +40,9 @@ const FormContact = () => {
 				target: "#formCont"
 			});
 
-		}, 3000);
+			setEnviado(false)
+		})
+		.catch(error => console.log('error', error));
 	}
 
 	return(
@@ -43,7 +62,7 @@ const FormContact = () => {
 				</div>
 				<div className="col-12 mb-4 col-md-4 form-group">
 					<label className="lb" htmlFor="telefono">{t('telefono')}</label>
-					<input className="form-control in" type="number" {...register("telefono", { min: 10, max: 10 })} />
+					<input className="form-control in" type="number" {...register("telefono")} />
 				</div>
 				<div className="col-12 mb-4 col-md-4 form-group">
 					<label className="lb" htmlFor="asunto">{t('compania')}</label>
@@ -54,10 +73,15 @@ const FormContact = () => {
 					<textarea className="form-control tx" {...register("mensaje")} cols="30" rows="5"></textarea>
 				</div>
 				<div className="col-12 md-4">
-					<reCAPTCHA />
+					{/* <reCAPTCHA /> */}
 				</div>
 				<div className="col-12 text-center">
-					<input type="submit" className="btn btn-send" value={t('enviar')} />
+					{
+						enviado ?
+							<input type="button" className="btn btn-send" disabled style={{pointerEvents: 'none'}} value="Send mail, wait...." />
+						:
+							<input type="submit" className="btn btn-send" value="Send" />
+					}
 				</div>
 			</div>
 		</form>

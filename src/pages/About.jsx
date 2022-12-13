@@ -4,18 +4,18 @@ import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion"
 
 import '../assets/scss/pages/about.scss';
-
-import person from '../assets/img/person.jpg';
 import { useData } from '../components/useData';
 
-import { AnimatePresence } from 'framer-motion';
+import baseURL from '../components/api';
 import Loading from './Loading';
 
 const About = () => {
     const {data} = useData('/api/portafolio');
+    const {data2} = useData('/api/equipo', 'data2');
+    
     const { t } = useTranslation();
 
-    if (!data) return <Loading /> ;
+    if (!data && !data2) return <Loading /> ;
 
     const dataMacy = {gallery: data, tipo: 'portafolio'};
 
@@ -73,24 +73,19 @@ const About = () => {
                     </div>
 
                     <div className="row">
-                        <div className="col-12 col-sm-6 col-md-4 mb-3">
-                            <div className="equipo text-center">
-                                <div className="bg mb-4 not-hover" style={{backgroundImage: `url(${person})`}}></div>
-                                <p>Ronal Hernandez</p>
-                            </div>
-                        </div>
-                        <div className="col-12 col-sm-6 col-md-4 mb-3">
-                            <div className="equipo text-center">
-                                <div className="bg mb-4 not-hover" style={{backgroundImage: `url(${person})`}}></div>
-                                <p>Ronal Hernandez</p>
-                            </div>
-                        </div>
-                        <div className="col-12 col-sm-6 col-md-4 mb-3">
-                            <div className="equipo text-center">
-                                <div className="bg mb-4 not-hover" style={{backgroundImage: `url(${person})`}}></div>
-                                <p>Ronal Hernandez</p>
-                            </div>
-                        </div>
+                        {
+                            data2 ?
+                            data2.map((item, idx) => {
+                                return(
+                                    <div className="col-12 col-sm-6 col-md-4 mb-3" key={'equi-'+idx}>
+                                        <div className="equipo text-center">
+                                            <div className="bg mb-4 not-hover" style={{backgroundImage: `url(${baseURL+item.portada})`}}></div>
+                                            <p>{item.nombre}</p>
+                                        </div>
+                                    </div>
+                                )
+                            }) : <></>
+                        }
                     </div>
                 </div>
 

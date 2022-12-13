@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import baseURL from "./api";
 
-export const useData = (url) => {
+export const useData = (url, name) => {
 	const [state, setState] = useState();
+	const namee = name || 'data';
 
 	useEffect(() => {
 		const dataFetch = async () => {
@@ -14,5 +15,7 @@ export const useData = (url) => {
 		dataFetch();
 	}, [url]);
 
-	return { data: state };
+	var data = {};
+	data[namee] = state
+	return data;
 };
