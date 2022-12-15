@@ -1,4 +1,4 @@
-import logo from '../assets/img/logo-header.svg';
+import logo from '../assets/img/logo-header-new.svg';
 
 import { motion } from "framer-motion";
 import React from "react";
@@ -80,7 +80,7 @@ const Loading = () => {
 		backgroundColor: '#1f1f1f'
       }}
     >
-	<img src={logo} alt="Funlife International" style={{filter: "none", maxWidth: "300px", width: "100%"}} />
+	<img src={logo} alt="Funlife International" className="mb-4" style={{filter: "none", maxWidth: "200px", width: "100%"}} />
       <motion.div
         style={LoadingContainer}
         variants={ContainerVariants}
