@@ -77,7 +77,7 @@ const Loading = () => {
 		top: 0,
 		left: 0,
 		zIndex: 1600,
-		backgroundColor: '#1f1f1f'
+		backgroundColor: '#141414'
       }}
     >
 	<img src={logo} alt="Funlife International" className="mb-4" style={{filter: "none", maxWidth: "200px", width: "100%"}} />
