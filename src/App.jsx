@@ -65,7 +65,7 @@ function App() {
 						if(window.innerWidth < 768) init.destroy();
 						setTimeout(() => {
 							setLoad(false);
-						}, 3000);
+						}, 4500);
 					}}
 					
 				>
