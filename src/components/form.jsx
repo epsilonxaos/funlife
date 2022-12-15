@@ -20,11 +20,12 @@ const FormContact = () => {
 		formdata.append("compania", data.compania);
 		formdata.append("mensaje", data.mensaje);
 		formdata.append("email", data.email);
+		formdata.append("tipo", data.tipo);
 
 		var requestOptions = {
-		method: 'POST',
-		body: formdata,
-		redirect: 'follow'
+			method: 'POST',
+			body: formdata,
+			redirect: 'follow'
 		};
 
 		fetch(baseURL+"api/sendMail", requestOptions)
@@ -40,14 +41,23 @@ const FormContact = () => {
 				target: "#formCont"
 			});
 
-			setEnviado(false)
+			document.getElementById('formCont').reset();
+
+			setEnviado(false);
 		})
 		.catch(error => console.log('error', error));
 	}
 
 	return(
 		<form onSubmit={handleSubmit(onSubmits)} id="formCont">
-			<div className="row">
+			<div className="row pt-4">
+				<div className="col-12 mb-4 form-group">
+					<select className="form-control sl" name="tipo">
+						<option value="Cotización de servicio de eventos" selected>{t('tipo_contacto.0')}</option>
+						<option value="Contacto">{t('tipo_contacto.1')}</option>
+						<option value="Cotización de viajes en grupo">{t('tipo_contacto.2')}</option>
+					</select>
+				</div>
 				<div className="col-12 col-md-6 mb-4 form-group">
 					<label className="lb" htmlFor="nombre">{t('nombre')} <span className="text-danger">*</span></label>
 					<input className={`form-control in ${errors.nombre ? 'is-invalid' : ''}`} type="text" {...register("nombre", {required: true, maxLength: 20})} />

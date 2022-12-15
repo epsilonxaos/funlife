@@ -9,27 +9,38 @@ header {
     transition: all .3s ease;
     padding: 15px 0;
 
+    .logo {
+        background-repeat: no-repeat;
+        background-size: contain;
+        // background-size: 160%;
+        background-position: center;
+        width: 180px;
+        height: 45px;
+        transition: all .3s ease;
+
+        @media screen and (min-width: 600px) {
+            width: 240px;
+            height: 80px;
+        }
+    }
+
     &.active {
         background-color: rgba($color: #1a1a1a, $alpha: 0.7);
         padding: 6px 0px;
+
+        .logo {
+            @media screen and (min-width: 600px) {
+                width: 240px;
+                height: 60px;
+            }
+        }
 
         &.transparent {
             background-color: transparent;
         }
     }
 
-    .logo {
-        background-repeat: no-repeat;
-        background-size: 160%;
-        background-position: center;
-        width: 180px;
-        height: 45px;
-
-        @media screen and (min-width: 600px) {
-            width: 240px;
-            height: 60px;
-        }
-    }
+    
 
     .languaje {
         margin: 0;

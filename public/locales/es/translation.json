@@ -60,5 +60,11 @@
 	"telefono": "TELÉFONO",
 	"compania": "COMPAÑIA",
 	"comentarios": "COMENTARIOS",
-	"enviar": "Enviar"
+	"enviar": "Enviar",
+
+	"tipo_contacto": [
+		"Cotización de servicio de eventos.",
+		"Contactar.",
+		"Cotización de viajes en grupo."
+	]
 }

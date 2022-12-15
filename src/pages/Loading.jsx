@@ -65,14 +65,19 @@ const Loading = () => {
 		animate="in"
 		exit="out"
 		variants={pageVariants}
-		transition={{ delay: 2, duration: 3 }}
+		transition={{ duration: 0.2 }}
       	style={{
         width: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
 		height: "100vh",
-		flexDirection: "column"
+		flexDirection: "column",
+		position: 'fixed',
+		top: 0,
+		left: 0,
+		zIndex: 600,
+		backgroundColor: '#1f1f1f'
       }}
     >
 	<img src={logo} alt="Funlife International" style={{filter: "none", maxWidth: "300px", width: "100%"}} />

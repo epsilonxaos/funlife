@@ -59,5 +59,11 @@
 	"telefono": "PHONE",
 	"compania": "COMPANY",
 	"comentarios": "MESSAGE",
-	"enviar": "Send"
+	"enviar": "Send",
+
+	"tipo_contacto": [
+		"Event service quote.",
+		"Connect.",
+		"Group travel quote."
+	]
 }

@@ -26,24 +26,42 @@ import { useData } from './components/useData';
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Loading from './pages/Loading';
+import { useEffect } from 'react';
 
 
 function App() {	
 	const location = useLocation();
 	const { data } = useData('/api/website');
 	const containerRef = useRef(null);
+	const [load, setLoad] = useState(true)
 	
 	// if (!data) return <AnimatePresence mode="wait"></AnimatePresence> ;
+
+	const handlerLoadingLanguaje = () => {
+		setLoad(true);
+
+		setTimeout(() => {
+			setLoad(false);
+		}, 2000);
+	}
 
 	const dataHeader = data ? {sociales: {'instagram': data.url_instagram, 'titleShow': true}} : false;
 	const dataFooter = data ? {sociales: {'instagram': data.url_instagram}, correo: data.email, telefonos: {usa: data.telefono_usa, mx: data.telefono_mx}} : false;
 	const dataHome = data ? {videos: {desk: data.video, movil: data.video_movil}} : false;
+
+	useEffect(() => {
+		if(!data) return
+
+		setTimeout(() => {
+			setLoad(false)
+		}, 3000);
+	});
 	
 	return (
-		<AnimatePresence>
+		<AnimatePresence mode="wait">
 
 			{
-				!data ? 
+				load ? 
 					<Loading />
 				:
 				<LocomotiveScrollProvider

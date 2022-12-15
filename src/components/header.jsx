@@ -3,19 +3,32 @@ import { NavLink, Link  } from 'react-router-dom';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 import SocialMedia from './socialMedia';
+import Loading from '../pages/Loading';
 import $ from 'jquery'
 
 import { useLocomotiveScroll } from 'react-locomotive-scroll'
 
-import logo from '../assets/img/logo-header.svg';
+// import logo from '../assets/img/logo-header.svg';
+import logo from '../assets/img/logo-header-new.svg';
 import btn from '../assets/img/estrellas-bln.png';
 
 const header = ({sociales}) => {
     const [openMenu, setOpenMenu] = useState(false);
     const [navbar, setNavbar] = useState(false);
     const [lang, setLang] = useState('en');
+    const [load, setLoad] = useState(false);
     const { t } = useTranslation();
-    const { scroll } = useLocomotiveScroll()
+    const { scroll } = useLocomotiveScroll();
+	
+	// if (!data) return <AnimatePresence mode="wait"></AnimatePresence> ;
+
+	const handlerLoadingLanguaje = () => {
+		setLoad(true);
+
+		setTimeout(() => {
+			setLoad(false);
+		}, 1000);
+	}
 
     function handlerClickMenu() {
         setOpenMenu(!openMenu);
@@ -62,9 +75,9 @@ const header = ({sociales}) => {
                         </div>
                         <div className="col-6 col-md-4 text-right d-flex align-items-center justify-content-end">
 							<ul className="list-unstyled d-flex align-items-center justify-content-center languaje mr-2 mr-md-4 small">
-								<li><button className={`${lang === 'en' ? 'active' : ''}`} onClick={() => {i18next.changeLanguage('en'); setLang('en');}}>EN</button></li>
+								<li><button className={`${lang === 'en' ? 'active' : ''}`} onClick={() => {handlerLoadingLanguaje(); i18next.changeLanguage('en'); setLang('en');}}>EN</button></li>
 								<li className="px-1">/</li>
-								<li><button className={`${lang === 'es' ? 'active' : ''}`} onClick={() => {i18next.changeLanguage('es'); setLang('es');}}>ES</button></li>
+								<li><button className={`${lang === 'es' ? 'active' : ''}`} onClick={() => {handlerLoadingLanguaje(); i18next.changeLanguage('es'); setLang('es');}}>ES</button></li>
 							</ul>
                             {
                                 !openMenu ? 
@@ -94,6 +107,8 @@ const header = ({sociales}) => {
                     </div>
                 </div>
             </div>
+
+            {load ? <Loading /> : <></>}
         </>
     );
 }
