@@ -5,7 +5,7 @@ import React from "react";
 
 const pageVariants = {
 	initial: {
-		opacity: 0,
+		opacity: 1,
 	},
 	in: {
 		opacity: 1,
@@ -76,7 +76,7 @@ const Loading = () => {
 		position: 'fixed',
 		top: 0,
 		left: 0,
-		zIndex: 600,
+		zIndex: 1600,
 		backgroundColor: '#1f1f1f'
       }}
     >

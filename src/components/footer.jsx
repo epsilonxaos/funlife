@@ -18,14 +18,14 @@ const footer = ({sociales, correo, telefonos}) => {
                 <div className="row mb-3 text-center justify-content-center">
                     <div className="col-12 pb-5">
 
-                        <div className="d-flex align-items-center justify-content-center flex-column flex-sm-row mb-4">
+                        {/* <div className="d-flex align-items-center justify-content-center flex-column flex-sm-row mb-4">
                             <img src={estrellas} alt="Estrellas instagram" className="mr-3" width={"35px"} />
                             <span><h3>@funlife.travelandevents</h3></span>
-                        </div>
+                        </div> */}
 						
-						<ul className="juicer-feed" data-feed-id="shogunepsiln" data-origin="embed-code" data-per="6" data-columns="3">
+						{/* <ul className="juicer-feed" data-feed-id="shogunepsiln" data-origin="embed-code" data-per="6" data-columns="3">
 							<h1 className="referral"><a id="titleInst" href="https://www.juicer.io">Powered by Juicer.io</a></h1>
-						</ul>
+						</ul> */}
                     </div>
                     <div className="col-12 col-md-10 col-lg-8 pt-5 pb-5">
                         <p className="mb-4 extra">{t('footer.texto')}</p>

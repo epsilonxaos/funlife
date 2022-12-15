@@ -1,5 +1,6 @@
 
 import '../assets/scss/pages/home.scss';
+import { useEffect, useState } from 'react';
 
 import VideoPortada from "../components/videoPortada";
 import QuienesSomos from '../components/quienesSomos';

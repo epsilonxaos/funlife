@@ -72,7 +72,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    <div className="row">
+                    {/* <div className="row">
                         {
                             data2 ?
                             data2.map((item, idx) => {
@@ -86,7 +86,7 @@ const About = () => {
                                 )
                             }) : <></>
                         }
-                    </div>
+                    </div> */}
                 </div>
 
 

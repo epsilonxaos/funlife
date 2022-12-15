@@ -36,46 +36,40 @@ function App() {
 	const [load, setLoad] = useState(true)
 	
 	// if (!data) return <AnimatePresence mode="wait"></AnimatePresence> ;
-
-	const handlerLoadingLanguaje = () => {
-		setLoad(true);
-
-		setTimeout(() => {
-			setLoad(false);
-		}, 2000);
-	}
-
 	const dataHeader = data ? {sociales: {'instagram': data.url_instagram, 'titleShow': true}} : false;
 	const dataFooter = data ? {sociales: {'instagram': data.url_instagram}, correo: data.email, telefonos: {usa: data.telefono_usa, mx: data.telefono_mx}} : false;
 	const dataHome = data ? {videos: {desk: data.video, movil: data.video_movil}} : false;
 
-	useEffect(() => {
-		if(!data) return
-
-		setTimeout(() => {
-			setLoad(false)
-		}, 3000);
-	});
+	// useEffect(() => {
+	// 	if(!data) return
+	// }, []);
 	
 	return (
 		<AnimatePresence mode="wait">
 
 			{
-				load ? 
-					<Loading />
+				!data ? 
+				<Loading />
 				:
+				
 				<LocomotiveScrollProvider
 					options={{ smooth: true }}
 					containerRef={containerRef}
 					watch={ [location.pathname] }
 					location={location.pathname}
-					onLocationChange={scroll => scroll.scrollTo(0, { duration: 0, disableLerp: true })} // If you want to reset the scroll position to 0 for example
+					onLocationChange={scroll => {
+						scroll.scrollTo(0, { duration: 0, disableLerp: true })
+						// setLoad(true);
+					}} // If you want to reset the scroll position to 0 for example
 					onUpdate={(init) => {
 						if(window.innerWidth < 768) init.destroy();
+						setTimeout(() => {
+							setLoad(false);
+						}, 3000);
 					}}
 					
 				>
-					
+					{load ? <Loading /> : <></> }
 					<Header {...dataHeader} />
 
 					<main data-scroll-container ref={containerRef}>
