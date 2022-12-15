@@ -10,8 +10,8 @@ import baseURL from '../components/api';
 import Loading from './Loading';
 
 const About = () => {
-    const {data} = useData('/api/portafolio');
-    const {data2} = useData('/api/equipo', 'data2');
+    const {data} = useData('portafolio');
+    const {data2} = useData('equipo', 'data2');
     
     const { t } = useTranslation();
 

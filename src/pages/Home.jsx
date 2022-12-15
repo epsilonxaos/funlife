@@ -16,7 +16,7 @@ import TitulosSeccion from '../components/titulos';
 const Home = ({videos}) => {
 	const dataVideo = videos;
     const { t } = useTranslation();
-	const {data} = useData('/api/galeria');
+	const {data} = useData('galeria');
 	
     if (!data) return <Loading /> ;
 

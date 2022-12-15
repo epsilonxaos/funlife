@@ -10,7 +10,7 @@ import { AnimatePresence } from 'framer-motion';
 import Loading from './Loading';
 
 const Gallery = () => {
-    const {data} = useData('/api/galeria');
+    const {data} = useData('galeria');
     const { t } = useTranslation();
 
     if (!data) return <Loading />;

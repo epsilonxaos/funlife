@@ -3,15 +3,18 @@ import { useTranslation } from 'react-i18next';
 import Swal from 'sweetalert2'
 import reCAPTCHA from "react-google-recaptcha"
 import baseURL from './api';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const FormContact = () => {
+	const captchaRef = useRef(null)
 	const { t } = useTranslation();
 	const { register, formState: { errors }, handleSubmit, } = useForm();
 	const [enviado, setEnviado] = useState(false);
+	const REACT_APP_SITE_KEY="6Ldmj4IjAAAAAKR19T9x970cBDwPR--iDFQIvZJO"
+	const REACT_APP_SECRET_KEY="6Ldmj4IjAAAAAIpv02fAY4l08TTwrNdj2ETJXGvJ"
 
 	const onSubmits = (data) => {
-		setEnviado(true)
+		setEnviado(true);
 	
 		var formdata = new FormData();
 		formdata.append("nombre", data.nombre);
@@ -52,7 +55,7 @@ const FormContact = () => {
 		<form onSubmit={handleSubmit(onSubmits)} id="formCont">
 			<div className="row pt-4">
 				<div className="col-12 mb-4 form-group">
-					<select className="form-control sl" name="tipo">
+					<select className="form-control sl" name="tipo" {...register("tipo")}>
 						<option value="Cotización de servicio de eventos" selected>{t('tipo_contacto.0')}</option>
 						<option value="Contacto">{t('tipo_contacto.1')}</option>
 						<option value="Cotización de viajes en grupo">{t('tipo_contacto.2')}</option>
@@ -83,7 +86,7 @@ const FormContact = () => {
 					<textarea className="form-control tx" {...register("mensaje")} cols="30" rows="5"></textarea>
 				</div>
 				<div className="col-12 md-4">
-					{/* <reCAPTCHA /> */}
+					{/* <reCAPTCHA sitekey={REACT_APP_SITE_KEY} ref={captchaRef} /> */}
 				</div>
 				<div className="col-12 text-center">
 					{

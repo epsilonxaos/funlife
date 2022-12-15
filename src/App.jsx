@@ -31,7 +31,7 @@ import { useEffect } from 'react';
 
 function App() {	
 	const location = useLocation();
-	const { data } = useData('/api/website');
+	const { data } = useData('website');
 	const containerRef = useRef(null);
 	const [load, setLoad] = useState(true)
 	

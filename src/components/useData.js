@@ -7,7 +7,7 @@ export const useData = (url, name) => {
 
 	useEffect(() => {
 		const dataFetch = async () => {
-			const data = await (await fetch(baseURL + url)).json();
+			const data = await (await fetch(baseURL + 'api/' + url)).json();
 
 			setState(data);
 		};
