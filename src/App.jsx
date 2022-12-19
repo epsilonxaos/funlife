@@ -43,6 +43,8 @@ function App() {
 	// useEffect(() => {
 	// 	if(!data) return
 	// }, []);
+
+	return <Loading />;
 	
 	return (
 		<AnimatePresence mode="wait">
