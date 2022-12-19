@@ -27,7 +27,7 @@ const Servicios = () => {
                         <p className="mb-0">{t('eventos_textos.0')}</p>
                         <p>{t('eventos_textos.1')}</p>
 
-                        <p className="mb-0">{t('eventos_textos.2')}</p>
+                        {/* <p className="mb-0">{t('eventos_textos.2')}</p>
                         <ul>
                             <li><p className="mb-1">{t('eventos_textos.3')}</p></li>
                             <li><p className="mb-1">{t('eventos_textos.4')}</p></li>
@@ -38,7 +38,7 @@ const Servicios = () => {
                         <ul>
                             <li> <p className="mb-1">{t('eventos_textos.7')}</p> </li>
                             <li> <p className="mb-1">{t('eventos_textos.8')}</p> </li>
-                        </ul>
+                        </ul> */}
 
                         <p className="mb-0">{t('eventos_textos.9')}</p>
                         <p>{t('eventos_textos.10')}</p>
