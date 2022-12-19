@@ -56,7 +56,7 @@ const FormContact = () => {
 			<div className="row pt-4">
 				<div className="col-12 mb-4 form-group">
 					<select className="form-control sl" name="tipo" {...register("tipo")}>
-						<option value="Cotización de servicio de eventos" selected>{t('tipo_contacto.0')}</option>
+						<option value="Cotización de servicio de eventos" defaultValue>{t('tipo_contacto.0')}</option>
 						<option value="Contacto">{t('tipo_contacto.1')}</option>
 						<option value="Cotización de viajes en grupo">{t('tipo_contacto.2')}</option>
 					</select>

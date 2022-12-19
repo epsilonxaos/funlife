@@ -10,14 +10,14 @@ import baseURL from '../components/api';
 import Loading from './Loading';
 
 const About = () => {
-    const {data} = useData('portafolio');
+    const {porta} = useData('portafolio', 'porta');
     const {data2} = useData('equipo', 'data2');
     
     const { t } = useTranslation();
 
-    if (!data && !data2) return <Loading /> ;
+    if (!porta) return <Loading /> ;
 
-    const dataMacy = {gallery: data, tipo: 'portafolio'};
+    const dataMacy = {gallery: porta, tipo: 'portafolio'};
 
     return(
         <motion.div 

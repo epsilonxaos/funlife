@@ -44,7 +44,7 @@ function App() {
 	// 	if(!data) return
 	// }, []);
 
-	return <Loading />;
+	// return <Loading />;
 	
 	return (
 		<AnimatePresence mode="wait">
