@@ -17,8 +17,13 @@ const Home = ({videos}) => {
 	const dataVideo = videos;
     const { t } = useTranslation();
 	const {data} = useData('galeria');
+	const [loading, setLoading] = useState(true);
+
+	const setLoadingHandle = () => {
+		setLoading(false);
+	}
 	
-    if (!data) return <Loading /> ;
+    if (!data) return  <Loading />;
 
     const dataGaleria = {galeria: data};
 
@@ -30,7 +35,9 @@ const Home = ({videos}) => {
             className="home"
             data-scroll-section
         >
-            <VideoPortada {...dataVideo}/>
+			{loading ? <Loading /> : <></>}
+
+            <VideoPortada desk={videos.desk} movil={videos.movil} setLoad={setLoadingHandle} />
             
             <QuienesSomos />
             
