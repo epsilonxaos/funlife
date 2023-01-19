@@ -29,73 +29,65 @@ import Loading from './pages/Loading';
 import { useEffect } from 'react';
 
 
-function App() {	
+function App() {
 	const location = useLocation();
 	const { data } = useData('website');
 	const containerRef = useRef(null);
 	const [load, setLoad] = useState(true)
 	
-	// if (!data) return <AnimatePresence mode="wait"></AnimatePresence> ;
 	const dataHeader = data ? {sociales: {'instagram': data.url_instagram, 'titleShow': true}} : false;
 	const dataFooter = data ? {sociales: {'instagram': data.url_instagram}, correo: data.email, telefonos: {usa: data.telefono_usa, mx: data.telefono_mx}} : false;
 	const dataHome = data ? {videos: {desk: data.video, movil: data.video_movil}} : false;
 
-	// useEffect(() => {
-	// 	if(!data) return
-	// }, []);
-
-	// return <Loading />;
-	
 	return (
 		<AnimatePresence mode="wait">
 
 			{
 				!data ? 
-				<Loading />
+					<Loading />
 				:
-				
-				<LocomotiveScrollProvider
-					options={{ smooth: true }}
-					containerRef={containerRef}
-					watch={ [location.pathname] }
-					location={location.pathname}
-					onLocationChange={scroll => {
-						scroll.scrollTo(0, { duration: 0, disableLerp: true })
-						// setLoad(true);
-					}} // If you want to reset the scroll position to 0 for example
-					onUpdate={(init) => {
-						if(window.innerWidth < 768) init.destroy();
-						setTimeout(() => {
-							setLoad(false);
-						}, 4500);
-					}}
-					
-				>
-					{load ? <Loading /> : <></> }
-					<Header {...dataHeader} />
+					<LocomotiveScrollProvider
+						options={{ smooth: true }}
+						containerRef={containerRef}
+						watch={ [location.pathname] }
+						location={location.pathname}
+						onLocationChange={scroll => {
+							scroll.scrollTo(0, { duration: 0, disableLerp: true })
+							// setLoad(true);
+						}} // If you want to reset the scroll position to 0 for example
+						onUpdate={(init) => {
+							if(window.innerWidth < 768) init.destroy();
+							setTimeout(() => {
+								setLoad(false);
+							}, 4500);
+						}}
+						
+					>
+						{load ? <Loading /> : <></> }
+						<Header {...dataHeader} />
 
-					<main data-scroll-container ref={containerRef}>
-						<Switch location={location} key={location.pathname}>
-							<Route exact path="/">
-								<Home {...dataHome} />
-							</Route>
-							<Route path="/gallery">
-								<Gallery />
-							</Route>
-							<Route path="/services">
-								<Services />
-							</Route>
-							<Route path="/about">
-								<About />
-							</Route>
-							<Route path="/contact">
-								<Contact />
-							</Route>
-						</Switch>
-					<Footer {...dataFooter} />
-					</main>
+						<main data-scroll-container ref={containerRef}>
+							<Switch location={location} key={location.pathname}>
+								<Route exact path="/">
+									<Home {...dataHome} />
+								</Route>
+								<Route path="/gallery">
+									<Gallery />
+								</Route>
+								<Route path="/services">
+									<Services />
+								</Route>
+								<Route path="/about">
+									<About />
+								</Route>
+								<Route path="/contact">
+									<Contact />
+								</Route>
+							</Switch>
+						<Footer {...dataFooter} />
+						</main>
 
-				</LocomotiveScrollProvider>
+					</LocomotiveScrollProvider>
 			}
 
 		</AnimatePresence>

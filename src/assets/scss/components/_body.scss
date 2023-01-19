@@ -1,109 +1,112 @@
-body {
-    font-family: $font-montserrat;
-    background-color: $oscuro;
-    color: white;
-    
-    #root {
-        min-height: 100vh;
-        // display: grid;
-        // grid-template-columns: 1fr;
-        // grid-template-rows: auto 1fr auto;
-    }
-
-    * {
-        text-rendering: optimizeLegibility;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    a,
-    a:hover,
-    a:active,
-    a:focus {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .bg {
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: auto;
-
-        img {
-            opacity: 0;
-        }
-    }
-
-    .mw16 {
-        max-width: 1600px;
-    }
-
-    .text-dorado {
-        color: $dorado;
-    }
-
-    .title {
-        font-family: $font-monument;
-        margin-bottom: 0;
-        // display: block;
-        position: relative;
-        margin-top: -2.083vw;
-        transform: translate3d(0,0,0);
-        font-size: 40px;
-        
-        @media screen and (min-width: 536px) {
-            font-size: 90px;
-        }
-        @media screen and (min-width: 768px) {
-            font-size: 8.569vw;
-            line-height: 8.569vw;
-        }
-        @media screen and (min-width: 1366px) {
-            font-size: 7.569vw;
-            line-height: 7.569vw;
-        }
-
-        @media (pointer: coarse) {
-            @media (orientation: landscape) {
-                font-size: 65px;
-            }
-        }
-
-        .extraTitle {
-            display: block;
-            height: auto;
-            left: 13.89vw;
-            position: absolute;
-            top: .486vw;
-            width: auto;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 1px;
-            font-size: 12px;
-            line-height: 14px;
-
-            @media screen and (min-width: 768px) {
-                font-size: 1.100vw;
-                line-height: 1.25vw;
-            }
-            @media screen and (min-width: 1366px) {
-                font-size: .900vw;
-            }
-        }
-    }
-
-    #macy-container {
-        .item img {
-            width: 100%;
-            display: block;
-            height: auto;
-        }
-    }
+html, body {
+	font-family: $font-montserrat;
+	background-color: $oscuro;
+	color: white;
 }
 
-@import './loading';
+body {
+
+	#root {
+		min-height: 100vh;
+		// display: grid;
+		// grid-template-columns: 1fr;
+		// grid-template-rows: auto 1fr auto;
+	}
+
+	* {
+		text-rendering: optimizeLegibility;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	a,
+	a:hover,
+	a:active,
+	a:focus {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.bg {
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: auto;
+
+		img {
+			opacity: 0;
+		}
+	}
+
+	.mw16 {
+		max-width: 1600px;
+	}
+
+	.text-dorado {
+		color: $dorado;
+	}
+
+	.title {
+		font-family: $font-monument;
+		margin-bottom: 0;
+		// display: block;
+		position: relative;
+		margin-top: -2.083vw;
+		transform: translate3d(0, 0, 0);
+		font-size: 40px;
+
+		@media screen and (min-width: 536px) {
+			font-size: 90px;
+		}
+		@media screen and (min-width: 768px) {
+			font-size: 8.569vw;
+			line-height: 8.569vw;
+		}
+		@media screen and (min-width: 1366px) {
+			font-size: 7.569vw;
+			line-height: 7.569vw;
+		}
+
+		@media (pointer: coarse) {
+			@media (orientation: landscape) {
+				font-size: 65px;
+			}
+		}
+
+		.extraTitle {
+			display: block;
+			height: auto;
+			left: 13.89vw;
+			position: absolute;
+			top: 0.486vw;
+			width: auto;
+			text-transform: uppercase;
+			font-weight: 600;
+			letter-spacing: 1px;
+			font-size: 12px;
+			line-height: 14px;
+
+			@media screen and (min-width: 768px) {
+				font-size: 1.1vw;
+				line-height: 1.25vw;
+			}
+			@media screen and (min-width: 1366px) {
+				font-size: 0.9vw;
+			}
+		}
+	}
+
+	#macy-container {
+		.item img {
+			width: 100%;
+			display: block;
+			height: auto;
+		}
+	}
+}
+
+@import "./loading";
 
 html.has-scroll-smooth {
 	backface-visibility: hidden;
@@ -119,90 +122,110 @@ html.has-scroll-smooth {
 	width: 100vw;
 }
 html.has-scroll-smooth {
-    overflow: hidden; 
-  }
-  
-  html.has-scroll-dragging {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; 
-  }
-  
-  .has-scroll-smooth body {
-    overflow: hidden; 
-  }
+	overflow: hidden;
+}
 
-  [data-scroll-container] {
-    perspective: 1px
-  }
-  
-  .has-scroll-smooth [data-scroll-container] {
-    min-height: 100vh; 
-    perspective: 1px
-  }
-  
-  [data-scroll-direction="horizontal"] [data-scroll-container] {
-    height: 100vh;
-    display: inline-block;
-    white-space: nowrap; 
-  }
-  
-  [data-scroll-direction="horizontal"] [data-scroll-section] {
-    display: inline-block;
-    vertical-align: top;
-    white-space: nowrap;
-    height: 100%; 
-  }
-  
-  .c-scrollbar {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 11px;
-    height: 100%;
-    transform-origin: center right;
-    transition: transform 0.3s, opacity 0.3s;
-    opacity: 0; 
-  }
-  
-    .c-scrollbar:hover {
-      transform: scaleX(1.45); 
-  }
-  
-    .c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
-      opacity: 1; 
-  }
-  
-  [data-scroll-direction="horizontal"] .c-scrollbar {
-      width: 100%;
-      height: 10px;
-      top: auto;
-      bottom: 0;
-      transform: scaleY(1); 
-  }
-  
-  [data-scroll-direction="horizontal"] .c-scrollbar:hover {
-        transform: scaleY(1.3); 
-  }
-  
-  .c-scrollbar_thumb {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: black;
-    opacity: 0.5;
-    width: 7px;
-    border-radius: 10px;
-    margin: 2px;
-    cursor: -webkit-grab;
-    cursor: grab; 
-  }
-    .has-scroll-dragging .c-scrollbar_thumb {
-      cursor: -webkit-grabbing;
-      cursor: grabbing; 
-  }
-    [data-scroll-direction="horizontal"] .c-scrollbar_thumb {
-      right: auto;
-      bottom: 0; 
-  }
+html.has-scroll-dragging {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.has-scroll-smooth body {
+	overflow: hidden;
+}
+
+[data-scroll-container] {
+	perspective: 1px;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+	min-height: 100vh;
+	perspective: 1px;
+}
+
+[data-scroll-direction="horizontal"] [data-scroll-container] {
+	height: 100vh;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+[data-scroll-direction="horizontal"] [data-scroll-section] {
+	display: inline-block;
+	vertical-align: top;
+	white-space: nowrap;
+	height: 100%;
+}
+
+.c-scrollbar {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 11px;
+	height: 100%;
+	transform-origin: center right;
+	transition: transform 0.3s, opacity 0.3s;
+	opacity: 0;
+}
+
+.c-scrollbar:hover {
+	transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+	opacity: 1;
+}
+
+[data-scroll-direction="horizontal"] .c-scrollbar {
+	width: 100%;
+	height: 10px;
+	top: auto;
+	bottom: 0;
+	transform: scaleY(1);
+}
+
+[data-scroll-direction="horizontal"] .c-scrollbar:hover {
+	transform: scaleY(1.3);
+}
+
+.c-scrollbar_thumb {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: black;
+	opacity: 0.5;
+	width: 7px;
+	border-radius: 10px;
+	margin: 2px;
+	cursor: -webkit-grab;
+	cursor: grab;
+}
+.has-scroll-dragging .c-scrollbar_thumb {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+[data-scroll-direction="horizontal"] .c-scrollbar_thumb {
+	right: auto;
+	bottom: 0;
+}
+
+.slbContentOuter {
+	width: 100%;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh;
+	position: absolute;
+}
+
+#root-loading {
+	
+}

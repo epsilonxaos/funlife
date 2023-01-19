@@ -2,6 +2,7 @@ import logo from '../assets/img/logo-header-new.svg';
 
 import { motion } from "framer-motion";
 import React from "react";
+import { createPortal } from 'react-dom';
 
 const pageVariants = {
 	initial: {
@@ -48,7 +49,7 @@ const starTransition = {
 };
 
 const Loading = () => {
-	return (
+	return createPortal(
 		<motion.div
 			initial="initial"
 			animate="in"
@@ -129,7 +130,8 @@ const Loading = () => {
 				transition={DotTransition}
 				/>
 			</motion.div> */}
-		</motion.div>
+		</motion.div>,
+		document.getElementById("root-loading")
 	);
 }
 

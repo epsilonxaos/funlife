@@ -9,7 +9,9 @@ const VideoPortada = ({desk, movil, setLoad}) => {
 		setLoadCount(loadCount + 1);
 		if (loadCount <= 2) {
 			console.log("video loaded");
-			setLoad();
+			setTimeout(() => {
+				setLoad();
+			}, 1000);
 		}
 
 		console.log(loadCount);

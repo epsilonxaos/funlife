@@ -14,7 +14,6 @@ import { useData } from '../components/useData';
 import TitulosSeccion from '../components/titulos';
 
 const Home = ({videos}) => {
-	const dataVideo = videos;
     const { t } = useTranslation();
 	const {data} = useData('galeria');
 	const [loading, setLoading] = useState(true);
@@ -32,7 +31,7 @@ const Home = ({videos}) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="home"
+            className={`home ${loading ? 'hidden' : ''}`}
             data-scroll-section
         >
 			{loading ? <Loading /> : <></>}
